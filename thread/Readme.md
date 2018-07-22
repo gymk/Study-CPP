@@ -95,6 +95,8 @@ std::thread
 		th.get_id() to get thread id from the thread instance varaible
 	*) no. of threads
 		std::thread::hardware_concurrency()
+	*) lambda functions
+		std::thread th([]{ std::cout << "From lambda function"" << std::endl });
 	*) always parameters get 'passed by value'
 	*) to 'pass value by reference', we need to pass with std::def 	==> TO DO: Elaborate more
 		std::thread th(thread_function, std::ref(s));
