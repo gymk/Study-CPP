@@ -2,9 +2,11 @@
 #include <stack>
 #include <algorithm>
 #include <vector>
+#include <list>
 #include <cstdlib>
 
 // TO DO - Try to use allocator, emplace, comparisons...
+// TO DO - if possible, print container type in below functions
 
 /*
 
@@ -48,10 +50,35 @@ void StackDefContainer(void)
     std::cout << "Size of stack: " << s.size() << "\n";
 }
 
-#if 0 // TO DO - Try to change container type and try
 void StackDefVector(void)
 {
-    std::stack<int, Container=std::vector> s;
+    // Note that stack data type and sequence container data type should be same - here it is 'int'
+    std::stack<int, std::vector<int> > s;   // Space between >> is need otherwise it assume '>>' operator
+
+    if(s.empty())
+        std::cout << "Stack is Empty\n";
+
+    std::cout << "Size of stack: " << s.size() << "\n";
+
+    for(int i = 0; i < 10; i++)
+        s.push(std::rand() % 256);
+
+    std::cout << "Size of stack: " << s.size() << "\n";
+
+    for(int i = 0; i < 5; i++)
+    {
+        std::cout << "Pop(ed): " << s.top() << "\n";
+        s.pop();
+    }
+
+    std::cout << "Size of stack: " << s.size() << "\n";
+    std::cout << s.container_type << std::endl;
+}
+
+void StackDefList(void)
+{
+    // Note that stack data type and sequence container data type should be same - here it is 'int'
+    std::stack<int, std::list<int> > s;   // Space between >> is need otherwise it assume '>>' operator
 
     if(s.empty())
         std::cout << "Stack is Empty\n";
@@ -71,9 +98,10 @@ void StackDefVector(void)
 
     std::cout << "Size of stack: " << s.size() << "\n";
 }
-#endif
 
 int main()
 {
     StackDefContainer();
+    StackDefVector();
+    StackDefList();
 }
