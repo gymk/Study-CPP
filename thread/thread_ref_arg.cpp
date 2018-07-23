@@ -1,5 +1,10 @@
 #include <iostream>
 #include <thread>
+// TO DO
+// Passing pointer
+// Pass by ref - using std::ref
+// Pass by ref - const &
+// rvalue as argument
 
 void thread_function(int const & x)
 {

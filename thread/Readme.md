@@ -84,6 +84,7 @@ std::thread vs pthread
 	*) Object lifetime and exception management is easy using RAII over mutex, condition variables and locks.
 	*) RAII is the center of design of the C++ thread library
 	*) pthread requires predefined thread function signature for its running. std:;thread we can use any callable object such as lambda functions or functor can be used to as a seperate thread.
+	*) std::thread cannot return a value like pthread_exit(). You need to use std::future to get return from std::thread
 
 std::thread
 	*) std::thread cannot be copied
@@ -103,12 +104,23 @@ std::thread
 	*) alternative is using std::move, which avoids copying and not sharing memory between the threads.
 		std::thread th(thread_function, std::move(s));
 
+std::future
+	*) provides a mechanism to obtain result from a std::thread
+
+std::async
+	*) Executes the provided function asynchronously (based on specified policy)
+	*) returns std::future object, which provides obtaining a return value from a std::thread
+		*) std::launch::deferred
+			performs lazy evaluation
+			Eventhough async thrad is created it will not get spawned until first call to future.wait() invoked.
+			Note that unlike std::lauch::async (which runs in seperate thread) it will run on the thread in which wait() is invoked.
+		*) std::launch:async
+			executes the function as a seperate thread
+			result will be stored in the std::future which can be obtained later
+
 multithread programming in C++
+	std::promise
 	Condition Variables
-		std::future
-		std::async
-		std::launch::async
-		std::launch::deferred
 	Mutex and Locks
 		std::recursive_mutex
 		std::timed_mutex
