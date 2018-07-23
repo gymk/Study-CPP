@@ -72,7 +72,7 @@ void StackDefVector(void)
     }
 
     std::cout << "Size of stack: " << s.size() << "\n";
-    std::cout << s.container_type << std::endl;
+    //std::cout << s.container_type << std::endl;
 }
 
 void StackDefList(void)
