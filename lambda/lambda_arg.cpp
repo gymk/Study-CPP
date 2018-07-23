@@ -15,6 +15,10 @@ struct MyStruct
     {
         std::cout << "MyStruct's Copy Constructor invoked...\n";
     }
+    void PrintTest(void) const  // Without this const, we can't access any of the members/ member function, because lamda args are passed as const
+    {
+        std::cout << "PrintTest\n";
+    }
 };
 
 int main()
@@ -46,10 +50,18 @@ int main()
         std::cout << "Destroying Lambda having MyStruct as argument\n";
     }
     std::cout << "\n";
+    // capture by value - All
+    {
+        MyStruct ms2;
+        std::cout << "Creating Lambda having MyStruct as argument\n";
+        auto f1 = [=](){ms.PrintTest(); ms2.PrintTest();}; // everything captured as value. Since both ms and ms2 used, two copy-constructor/ destructor calles observed
+        std::cout << "Destroying Lambda having MyStruct as argument\n";
+    }
+    std::cout << "\n";
     // capture by reference - All
     {
         std::cout << "Creating Lambda having MyStruct as reference\n";
-        auto f1 = [&](){}; // everying captured as reference
+        auto f1 = [&](){ ms.PrintTest(); }; // everying captured as reference
         std::cout << "Destroying Lambda having MyStruct as reference\n";
     }
     std::cout << "\n";
@@ -74,6 +86,15 @@ Creating Lambda having MyStruct as argument
 Destroying Lambda having MyStruct as argument
 MyStruct's Destructor invoked...
 
+MyStruct's Constructor invoked...
+Creating Lambda having MyStruct as argument
+MyStruct's Copy Constructor invoked...
+MyStruct's Copy Constructor invoked...
+Destroying Lambda having MyStruct as argument
+MyStruct's Destructor invoked...
+MyStruct's Destructor invoked...
+MyStruct's Destructor invoked...
+
 Creating Lambda having MyStruct as reference
 Destroying Lambda having MyStruct as reference
 
@@ -81,8 +102,10 @@ Exiting from main
 MyStruct's Destructor invoked...
 
 
+
 */
 
 /*
 Note that lambda are scoped w.r.to where it is defined
+Arguments are passed as const to lambda
 */
