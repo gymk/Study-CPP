@@ -42,7 +42,7 @@ int main()
     {
         MyStruct ms2;
         std::cout << "Creating Lambda having MyStruct as argument\n";
-        auto f1 = [=](){}; // everything captured as reference, dont know why, it should have invoked copy constructor for both ms and ms2
+        auto f1 = [=](){}; // everything captured as value, since none of the variable used inside lamba, nothing passed, resulting no MyStruct constructor/ destrucor call
         std::cout << "Destroying Lambda having MyStruct as argument\n";
     }
     std::cout << "\n";
