@@ -99,7 +99,7 @@ std::thread
 	*) lambda functions
 		std::thread th([]{ std::cout << "From lambda function"" << std::endl });
 	*) always parameters get 'passed by value'
-	*) to 'pass value by reference', we need to pass with std::def 	==> TO DO: Elaborate more
+	*) to 'pass value by reference', we need to pass with std::ref 	==> TO DO: Elaborate more
 		std::thread th(thread_function, std::ref(s));
 	*) alternative is using std::move, which avoids copying and not sharing memory between the threads.
 		std::thread th(thread_function, std::move(s));
