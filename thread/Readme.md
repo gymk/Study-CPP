@@ -22,7 +22,9 @@ std::thread th(thread_function)
 ```
 
 >> ### Running a Functor as thread
-Functors can be executed as a seperate thread
+Functors can be executed as a seperate thread.
+
+Due to [Most vexing parse](https://en.wikipedia.org/wiki/Most_vexing_parse), functor need to wrapped with brackets.
 
 
 ```
