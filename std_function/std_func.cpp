@@ -39,3 +39,13 @@ I am from functor...
 I am from lambda...
 
 */
+
+/*
+Notes:
+    *) as long as function signature mathches, std::function can take function/ functor/ lambda as values
+*/
+
+/*
+TO DO:
+    *) Need more notes
+*/

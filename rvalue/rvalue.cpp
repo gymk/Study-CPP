@@ -30,10 +30,14 @@ Output:
 rvalue_ref: Received msg: quoted_string0x7ffe3a2740d0
 rvalue_ref: Received msg: wrapped_quoted_string0x161d030
 lvalue_ref: Received msg: assigned_string0x7ffe3a2740d0
+*/
 
+/*
 Notes:
 	Looks like it is possible to overload by lvalue, rvalue argument types
+*/
 
+/*
 TO-DO:
 	Do the same test over customer string library and check which constructors are invoked for each of the above case
 */

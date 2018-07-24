@@ -79,3 +79,32 @@ int main()
     lock_guard(recMut, msg);
     try_lock(recMut, msg);
 }
+
+/*
+
+Output:
+
+std::mutex Manually locked, unlocked
+std::mutex able to try_lock after manual lock
+
+std::mutex lock_guard locked, unlocked
+std::mutex able to try_lock again inside lock_guard
+std::mutex SECOND LEVEL lock_guard locked, unlocked
+
+std::mutex try_lock locked, unlocked
+std::mutex able to try_lock again inside try_lock
+
+std::recursive_mutex Manually locked, unlocked
+std::recursive_mutex able to try_lock after manual lock
+
+std::recursive_mutex lock_guard locked, unlocked
+std::recursive_mutex able to try_lock again inside lock_guard
+std::recursive_mutex SECOND LEVEL lock_guard locked, unlocked
+
+std::recursive_mutex try_lock locked, unlocked
+std::recursive_mutex able to try_lock again inside try_lock
+
+Notes:
+    *) TO DO - Why std::mutex able to lock again???
+
+*/

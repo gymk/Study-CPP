@@ -5,7 +5,7 @@
 #include <mutex>
 #include <algorithm>
 
-#define MAX_THREADS         100
+#define MAX_THREADS         10
 
 class CThreadGuard
 {
@@ -109,3 +109,46 @@ int main()
     //SharePtr_Test1(); gives crash - yet to find the cause
     WeakPtr_Test1();
 }
+
+/*
+Output:
+
+TEST_STRUCT Constructor invoked
+
+i: 0
+i: 1
+Current Val: 11
+RefCount: i: 2
+2
+Current Val: 12
+RefCount: 3
+Current Val: 13
+RefCount: 2
+i: 3
+Current Val: 14
+RefCount: 2
+i: 4
+Current Val: 15
+RefCount: 2
+i: Current Val: 16
+RefCount: 52
+
+i: 6
+Current Val: 17
+RefCount: 2
+i: 7
+Current Val: 18
+RefCount: 3
+i: 8
+i: 9
+Current Val: 19
+RefCount: 2
+
+*/
+
+/*
+Notes:
+    TODO
+        *) Why no destructor print?
+        *) Why other '#if 0' cases not working???
+ */

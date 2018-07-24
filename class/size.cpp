@@ -43,11 +43,12 @@ Size of empty CDeviceClass: 4
 Size of empty struct: 1
 Size of empty functor: 1
 Size of empty lambda: 1
+*/
 
+/*
 Notes:
-In C++ to have unique address for each object even if it is empty, it will have single dummy on byte
-eg., new EMPTY_STRUCT[10] should return 10 unique address, if size is zero, all objects will have same address
-which is not valid, so dummy byte for empty/ struct/ functor
-
-if empty struct/class is inherited, their won't be any dummy value in inherited structure/ class. CDeviceClass has size 4 which is size of int, CEmptyClass dummy size is not included in CDeviceClass
+    *) In C++ to have unique address for each object even if it is empty, it will have single dummy on byte
+       eg., new EMPTY_STRUCT[10] should return 10 unique address, if size is zero, all objects will have same address
+       which is not valid, so dummy byte for empty/ struct/ functor
+    *) if empty struct/class is inherited, their won't be any dummy value in inherited structure/ class. CDeviceClass has size 4 which is size of int, CEmptyClass dummy size is not included in CDeviceClass
 */

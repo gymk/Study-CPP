@@ -26,7 +26,9 @@ int main()
 /*
 Output:
     Passed by reference
+*/
 
+/*
 Notes:
     *) cannot pass mutex as 'Pass by Value', no copy constructor nor assignment operator
     *) sample applies to all BasicLockable types (mutex, recursivemutex, timed_mutex, recursive_timed_mutex, unique_lock)
