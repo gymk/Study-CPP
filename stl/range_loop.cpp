@@ -32,12 +32,40 @@ void vector_char_not_proxy(void)
         m = !m;
     for(const auto & m : bv)
         std::cout << static_cast<int>(m) << ' ';
-    std::cout << "\n\n";        /* Output 1 1 1 1 */}
+    std::cout << "\n\n";        /* Output 1 1 1 1 */
+}
+
+void range_over_int(void)
+{
+    int a[] = {55, 33, 77};
+
+    for(auto && m : a)      // as rvalue reference
+    {
+        std::cout << m << ' ';
+    }
+    std::cout << std::endl;
+    for(auto & m : a)       // as reference
+    {
+        std::cout << m << ' ';
+    }
+    std::cout << std::endl;
+    for(auto m : a)         // as copy
+    {
+        std::cout << m << ' ';
+    }
+    std::cout << std::endl;
+    for(int m : a)          // explicit type specified in range-loop
+    {
+        std::cout << m << ' ';
+    }
+    std::cout << std::endl;
+}
 
 int main()
 {
     vector_bool_proxy_iterator();
     vector_char_not_proxy();
+    range_over_int();
 }
 
 /*
@@ -48,7 +76,12 @@ Output:
 
 1 1 1 1 
 
-0 0 0 0
+0 0 0 0 
+
+55 33 77 
+55 33 77 
+55 33 77 
+55 33 77
 */
 
 /*

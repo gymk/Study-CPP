@@ -9,6 +9,9 @@
 ## Template Function
     - inside template how args are handled? pass by value?
 
+## Template Argument Detection
+    *) refer size_of.cpp
+
 ## Need to anaylyse more how this works
 
     tempplate<typename T>
