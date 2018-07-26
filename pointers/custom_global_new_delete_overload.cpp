@@ -90,6 +90,13 @@ void operator delete[](void * p, MEM_TYPE alloc_type)
     free(p);    // std::free can be used
 }
 
+// placement delete operator - which get invoked only from constructor (if it throws exception)
+void operator delete(void * p, CTemp & delItem)
+{
+    std::cout << "placement-delete invoked " << p << std::endl;
+    free(p);
+}
+
 int main()
 {
     // Test with custom new and delete
@@ -200,6 +207,8 @@ Notes:
 TO DO
     *) is it possible to use std::unique_ptr std::shared_ptr with custom new/delete???
     *) How to use ver2 delete???
+        It is not possible to use.
+        We may define placement-delete, but it will get invoked only by constructors on exceptions, not on normal delete
 */
 
 /*
