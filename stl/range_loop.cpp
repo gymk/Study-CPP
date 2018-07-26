@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <typeinfo>
+#include <ostream>
 
 void vector_bool_proxy_iterator(void)
 {
@@ -61,11 +63,59 @@ void range_over_int(void)
     std::cout << std::endl;
 }
 
+template <typename T>
+void TestRangeLoop(void)
+{
+    T list[10] = {0};
+
+    std::cout << __FUNCTION__ << "Type: " << typeid(T).name() << std::endl;
+
+    for(auto & m : list)
+        std::cout << m << ' ';
+    std::cout << std::endl << std::endl;
+}
+
+class CTemp
+{
+public:
+    CTemp(void)
+    {
+        _i = rand() % 100;
+    }
+
+    #if 1
+    CTemp(const std::initializer_list<int> & list):CTemp()
+    {
+
+    }
+    #endif
+    operator int()
+    {
+        return _i;
+    }
+    
+    friend std::ostream & operator<<(std::ostream & o, const CTemp & rhs)
+    {
+        o << rhs._i << ' ';
+        return o;
+    }
+
+private:
+    int _i;
+};
+
 int main()
 {
     vector_bool_proxy_iterator();
     vector_char_not_proxy();
     range_over_int();
+
+    TestRangeLoop<int>();
+    TestRangeLoop<float>();
+    TestRangeLoop<double>();
+    TestRangeLoop<int*>();
+    TestRangeLoop<char*>();
+    TestRangeLoop<CTemp>();
 }
 
 /*
