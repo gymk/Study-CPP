@@ -139,12 +139,12 @@ void test_struct_test(void)
     std::cout << std::endl;
 
     std::cout << "Before emplace_back test(val++)\n";
-    test_list.emplace_back(test(val++));                // unnecessary temp object creation and then copied into vector
+    test_list.emplace_back(test(val++));                // unnecessary temp object creation and then moved into vector
     std::cout << "After emplace_back\n";
     std::cout << std::endl;
 
     std::cout << "Before emplace_back std::move\n";
-    test_list.emplace_back(std::move(test(val++)));    // unnecessary temp object creation and then copied into vector
+    test_list.emplace_back(std::move(test(val++)));    // unnecessary temp object creation and then moved into vector
     std::cout << "After emplace_back\n";
     std::cout << std::endl;
 
