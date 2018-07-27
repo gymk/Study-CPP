@@ -1,5 +1,7 @@
 /*
 g++ weak_ptr -std=c++11 -lpthread
+
+YET TO COMPLETE
 */
 
 #include <iostream>

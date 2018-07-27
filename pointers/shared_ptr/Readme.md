@@ -7,11 +7,11 @@
 ## accessing object
     *) p->
         can access object members
-    *) *p
+    *) *p // TO VERIFY
         gives object address
 
 ## reset
-    *) if pointer it no more needed, it can be reset using p.reset()
+    *) if pointer is no more needed, it can be reset using p.reset()
 
 ## Checking pointer validity
     - when pointers get reset, both object and std::shared_ptr get deleted, std::shared_ptr will have nullptr
@@ -42,3 +42,6 @@
 
 ### assignemnt
     TO DO
+
+## Array in shared_ptr
+TO DO
