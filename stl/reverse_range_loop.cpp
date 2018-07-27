@@ -28,9 +28,11 @@ struct reverse_range
         return std::rbegin(_iterable);
     }
 
-    auto end() const -> decltype(this->_iterable.rend())
+    //auto end() const -> decltype(this->_iterable.rend())
+    auto end() const -> decltype(std::rend(_iterable))
     {
-        return _iterable.rend();
+        //return _iterable.rend();
+        return std::rend(_iterable);
     }
 };
 
