@@ -1,5 +1,5 @@
 /*
-g++ unique_ptr_scalar.cpp -std=c++11 -lpthread
+g++ unique_ptr_array.cpp -std=c++11 -lpthread
 
 g++ -v
 Using built-in specs.
@@ -14,6 +14,8 @@ gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10)
 #include <iostream>
 #include <memory>
 #include <thread>
+
+const int arr_size = 5;
 
 // Overloading new and delete to check std::unqiue_ptr alloc/ dealloc sequences
 void* operator new(size_t t)
@@ -31,11 +33,46 @@ void operator delete(void * p)
     free(p);
 }
 
+void* operator new[](size_t t)
+{
+    void * p = malloc(t);
 
-void UniquePtr_CheckScopeMovement(std::unique_ptr<int> pScalar)
+    std::cout << "Allocating array " << t << ' ' << p << std::endl;
+
+    return p;
+}
+
+void operator delete[](void * p)
+{
+    std::cout << "Deallocating array " << p << std::endl;
+    free(p);
+}
+
+void UniquePtr_CheckScopeMovement(std::unique_ptr<int[]> pArray, int startval)
 {
     std::cout << "Entering " << __FUNCTION__ << std::endl;
-    std::cout << *pScalar << std::endl;
+    std::cout << pArray.get() << std::endl;
+    for(int i = 0; i < arr_size; i++)
+        pArray[i] = i+startval;
+
+    for(int i = 0; i < arr_size; i++) // Output: 1 2 3 4 5
+        std::cout << pArray[i] << ' ';
+    std::cout << std::endl;
+    std::cout << "Exit " << __FUNCTION__ << std::endl;
+
+    std::cout << std::endl;
+}
+
+void UniquePtr_CheckScopeMovement_Ref(std::unique_ptr<int[]> & pArray, int startval)
+{
+    std::cout << "Entering " << __FUNCTION__ << std::endl;
+    std::cout << pArray.get() << std::endl;
+    for(int i = 0; i < arr_size; i++)
+        pArray[i] = i+startval;
+
+    for(int i = 0; i < arr_size; i++) // Output: 1 2 3 4 5
+        std::cout << pArray[i] << ' ';
+    std::cout << std::endl;
     std::cout << "Exit " << __FUNCTION__ << std::endl;
 
     std::cout << std::endl;
@@ -43,9 +80,13 @@ void UniquePtr_CheckScopeMovement(std::unique_ptr<int> pScalar)
 
 void UniquePtr_LocalScopeCheck(void)   // All the unique_ptr will be released at exit of this function
 {
-    std::unique_ptr<int> pIScalar(new int(100));
+    std::unique_ptr<int[]> pIArray(new int[5]);
+    for(int i = 0; i < 5; i++)
+        pIArray[i] = i+1;
 
-    std::cout << *pIScalar << std::endl;    // Output: 100
+    for(int i = 0; i < 5; i++) // Output: 1 2 3 4 5
+        std::cout << pIArray[i] << ' ';
+    std::cout << std::endl;
 
     std::cout << std::endl;
 }
@@ -53,9 +94,9 @@ void UniquePtr_LocalScopeCheck(void)   // All the unique_ptr will be released at
 void UniquePtr_CheckOwnershipMove(void)
 {
     std::cout << "Entering " << __FUNCTION__ << std::endl;
-    std::unique_ptr<int> pA(new int(80));
+    std::unique_ptr<int[]> pA(new int[arr_size]);
 
-    std::unique_ptr<int> pB = std::move(pA);
+    std::unique_ptr<int[]> pB = std::move(pA);
 
     std::cout << pA.get() << std::endl;  // pA will have null
     std::cout << pB.get() << std::endl;  // 80 should be printed
@@ -67,7 +108,7 @@ void UniquePtr_CheckOwnershipMove(void)
 void UniquePtr_CheckOwnershipRelease(void)
 {
     std::cout << "Entering " << __FUNCTION__ << std::endl;
-    std::unique_ptr<int> pA(new int(30));
+    std::unique_ptr<int[]> pA(new int[arr_size]);
 
     std::cout << "unique_ptr object address before release: " << pA.get() << std::endl;  // pA will have null
     int * pI = pA.release();
@@ -83,7 +124,7 @@ void UniquePtr_CheckOwnershipRelease(void)
 void UniquePtr_CheckReset(void)
 {
     std::cout << "Entering " << __FUNCTION__ << std::endl;
-    std::unique_ptr<int> pA(new int(30));
+    std::unique_ptr<int[]> pA(new int[arr_size]);
 
     std::cout << "unique_ptr object address before release: " << pA.get() << std::endl;  // pA will have null
     pA.reset();
@@ -108,12 +149,17 @@ void UniquePtr_ReturningUniquePtr(void)
 int main()
 {
     {   // Passing to function as argument
-        std::unique_ptr<int> pIScalar(new int(500));
-        UniquePtr_CheckScopeMovement(std::move(pIScalar));    // pIScalar will be released after UniquePtr_CheckScalarScopeMovement execution
+        std::unique_ptr<int[]> pIScalar(new int[arr_size]);
+        UniquePtr_CheckScopeMovement(std::move(pIScalar), 100);    // pIScalar will be released after UniquePtr_CheckScalarScopeMovement execution
     }
+    {   // Passing to function as argument
+        std::unique_ptr<int[]> pIScalar(new int[arr_size]);
+        UniquePtr_CheckScopeMovement_Ref(pIScalar, 200);
+    }   // pIScalar will be released after this scope
     {   // Passing to thread as argument
-        std::unique_ptr<int> pIScalar(new int(600));
-        std::thread th(UniquePtr_CheckScopeMovement, std::move(pIScalar));
+        // TO DO - why scalar of size 56 crated for this?
+        std::unique_ptr<int[]> pIScalar(new int[arr_size]);
+        std::thread th(UniquePtr_CheckScopeMovement, std::move(pIScalar), 300);
 
         th.join();
     }
@@ -138,67 +184,53 @@ int main()
 /*
 Output:
 
-Allocating scalar 4 0x1a43c20
-Entering UniquePtr_CheckScalarScopeMovement
-500
-Exit UniquePtr_CheckScalarScopeMovement
+Allocating array 20 0xa0cc20
+Entering UniquePtr_CheckScopeMovement
+0xa0cc20
+100 101 102 103 104 
+Exit UniquePtr_CheckScopeMovement
 
-Deallocating scalar 0x1a43c20
-Allocating scalar 4 0x1a43c20
-Allocating scalar 56 0x1a44050
-Entering UniquePtr_CheckScalarScopeMovement
-600
-Exit UniquePtr_CheckScalarScopeMovement
+Deallocating array 0xa0cc20
+Allocating array 20 0xa0cc20
+Entering UniquePtr_CheckScopeMovement_Ref
+0xa0cc20
+200 201 202 203 204 
+Exit UniquePtr_CheckScopeMovement_Ref
 
-Deallocating scalar 0x1a43c20
-Deallocating scalar 0x1a44050
-Allocating scalar 4 0x1a43c20
-100
+Deallocating array 0xa0cc20
+Allocating array 20 0xa0cc20
+Allocating scalar 64 0xa0d050
+Entering UniquePtr_CheckScopeMovement
+0xa0cc20
+300 301 302 303 304 
+Exit UniquePtr_CheckScopeMovement
 
-Deallocating scalar 0x1a43c20
+Deallocating array 0xa0cc20
+Deallocating scalar 0xa0d050
+Allocating array 20 0xa0cc20
+1 2 3 4 5 
+
+Deallocating array 0xa0cc20
 Entering UniquePtr_CheckOwnershipMove
-Allocating scalar 4 0x1a43c20
+Allocating array 20 0xa0cc20
 0
-0x1a43c20
+0xa0cc20
 Exit UniquePtr_CheckOwnershipMove
 
-Deallocating scalar 0x1a43c20
+Deallocating array 0xa0cc20
 Entering UniquePtr_CheckOwnershipRelease
-Allocating scalar 4 0x1a43c20
-unique_ptr object address before release: 0x1a43c20
+Allocating array 20 0xa0cc20
+unique_ptr object address before release: 0xa0cc20
 unique_ptr object address after release: 0
-Value of pI: 0x1a43c20
-Value @ *pI: 30
+Value of pI: 0xa0cc20
+Value @ *pI: 0
 Exit UniquePtr_CheckOwnershipRelease
 
 Entering UniquePtr_CheckReset
-Allocating scalar 4 0x1a441c0
-unique_ptr object address before release: 0x1a441c0
-Deallocating scalar 0x1a441c0
+Allocating array 20 0xa0d1d0
+unique_ptr object address before release: 0xa0d1d0
+Deallocating array 0xa0d1d0
 unique_ptr object address after release: 0
 Exit UniquePtr_CheckReset
 
-*/
-
-/*
-Notes:
-    *) two kinds of uniqute_ptr available
-        *) scalar
-            eg., std::unique_ptr<int>
-        *) array
-            eg., std::unique_ptr<int[]>
-    *) Creating std:unique_ptr
-        *) C++14 and above
-            auto p = std::make_unique<type>(constructor to invoke for that type)
-            auto p = std::make_unique<type[]>(n)(constructor to invoke for that type)
-        *) C++11
-            std::unique_ptr<type> variable(new type(construtor to invoke for that type));
-        *) < C++11
-            not supported
-    *) no copy or assginment constructor
-    *) only move constructor for moving the ownership
-    *) memory is owned by std::uniqure_ptr only
-    *) Delete
-        *) on scope exit of std::unique_ptr<> memory will be free'd
-        *) alternatively p.reset() will release the memory
 */
