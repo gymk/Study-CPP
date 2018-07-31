@@ -1,5 +1,5 @@
 /*
-g++ pass-by-value.cpp
+g++ pass-by-value.cpp -std=c++11
 
 g++ -v
 Using built-in specs.
@@ -78,25 +78,31 @@ int main()
 /*
 Output:
 
-0x7ffe88a2fe80: Entering main
+0x7ffc7adf8800: Entering main
 creating a
-0x7ffe88a2fe40: Entering default constructor
-0x7ffe88a2fe40: Leaving default constructor
+0x7ffc7adf87c0: Entering default constructor
+0x7ffc7adf87c0: Leaving default constructor
+	Inside main, details of a:  0x7ffc7adf87fd
 creating t
-0x7ffe88a2fe40: Entering CopyConstructor
-0x7ffe88a2fe40: Leaving CopyConstructor
-0x7ffe88a2fe30: Entering f
-0x7ffe88a2fdf0: Entering CopyConstructor
-0x7ffe88a2fdf0: Leaving CopyConstructor
-0x7ffe88a2fe30: Leaving f
-0x7ffe88a2fe40: Entering ~test
-0x7ffe88a2fe40: Leaving ~test
+0x7ffc7adf87b0: Entering CopyConstructor
+	Inside CopyConstructor, details of rhs:  0x7ffc7adf87fd
+0x7ffc7adf87b0: Leaving CopyConstructor
+0x7ffc7adf87b0: Entering f
+	Inside f, details of a:  0x7ffc7adf87ff
+0x7ffc7adf8760: Entering CopyConstructor
+	Inside CopyConstructor, details of rhs:  0x7ffc7adf87ff
+0x7ffc7adf8760: Leaving CopyConstructor
+0x7ffc7adf87b0: Leaving f
+0x7ffc7adf87c0: Entering ~test
+0x7ffc7adf87c0: Leaving ~test
+	Inside main, details of t:  0x7ffc7adf87fe
 leaving main
-0x7ffe88a2fe40: Entering ~test
-0x7ffe88a2fe40: Leaving ~test
-0x7ffe88a2fe40: Entering ~test
-0x7ffe88a2fe40: Leaving ~test
-0x7ffe88a2fe80: Leaving main
+0x7ffc7adf87c0: Entering ~test
+0x7ffc7adf87c0: Leaving ~test
+0x7ffc7adf87c0: Entering ~test
+0x7ffc7adf87c0: Leaving ~test
+0x7ffc7adf8800: Leaving main
+
 */
 
 /*
