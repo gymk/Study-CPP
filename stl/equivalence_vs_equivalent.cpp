@@ -120,6 +120,11 @@ x1 and x2 are Equal
 Count of s: 30 21 92 23 24 15 86 27 68 59 
 36 not found
 Found 86
+Default: 1
+std::less: 1
+std::greater: 1
+std::less_equal: 0
+std::greathre_equal: 0
 
 */
 
