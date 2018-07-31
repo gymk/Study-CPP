@@ -22,11 +22,11 @@ typedef struct FuncEntryLog
     const void * _pAddress;
     FuncEntryLog(const char * pFuncName, const void * pAddress):_pFuncName{pFuncName}, _pAddress(pAddress)
     {
-        std::cout << this << ": " << "Entering " << pFuncName << std::endl;
+        std::cout << pAddress << ": " << "Entering " << pFuncName << std::endl;
     }
     ~FuncEntryLog()
     {
-        std::cout << this << ": " << "Leaving " << _pFuncName << std::endl;
+        std::cout << _pAddress << ": " << "Leaving " << _pFuncName << std::endl;
     }
 } FuncEntryLog;
 
@@ -65,7 +65,7 @@ T f(T a)
 
 int main()
 {
-    FuncEntryLog fs(__FUNCTION__, nullptr);
+    FuncEntryLog fs(__FUNCTION__, (void*)&main);
     std::cout << "creating a\n";
     test a;
     a.PrintAddress("Inside main, details of a: ");
@@ -78,36 +78,37 @@ int main()
 /*
 Output:
 
-0x7ffc7adf8800: Entering main
+0x400a76: Entering main
 creating a
-0x7ffc7adf87c0: Entering default constructor
-0x7ffc7adf87c0: Leaving default constructor
-	Inside main, details of a:  0x7ffc7adf87fd
+0x7fffb4e03c8d: Entering default constructor
+0x7fffb4e03c8d: Leaving default constructor
+	Inside main, details of a:  0x7fffb4e03c8d
 creating t
-0x7ffc7adf87b0: Entering CopyConstructor
-	Inside CopyConstructor, details of rhs:  0x7ffc7adf87fd
-0x7ffc7adf87b0: Leaving CopyConstructor
-0x7ffc7adf87b0: Entering f
-	Inside f, details of a:  0x7ffc7adf87ff
-0x7ffc7adf8760: Entering CopyConstructor
-	Inside CopyConstructor, details of rhs:  0x7ffc7adf87ff
-0x7ffc7adf8760: Leaving CopyConstructor
-0x7ffc7adf87b0: Leaving f
-0x7ffc7adf87c0: Entering ~test
-0x7ffc7adf87c0: Leaving ~test
-	Inside main, details of t:  0x7ffc7adf87fe
+0x7fffb4e03c8f: Entering CopyConstructor
+	Inside CopyConstructor, details of rhs:  0x7fffb4e03c8d
+0x7fffb4e03c8f: Leaving CopyConstructor
+0: Entering f
+	Inside f, details of a:  0x7fffb4e03c8f
+0x7fffb4e03c8e: Entering CopyConstructor
+	Inside CopyConstructor, details of rhs:  0x7fffb4e03c8f
+0x7fffb4e03c8e: Leaving CopyConstructor
+0: Leaving f
+0x7fffb4e03c8f: Entering ~test
+0x7fffb4e03c8f: Leaving ~test
+	Inside main, details of t:  0x7fffb4e03c8e
 leaving main
-0x7ffc7adf87c0: Entering ~test
-0x7ffc7adf87c0: Leaving ~test
-0x7ffc7adf87c0: Entering ~test
-0x7ffc7adf87c0: Leaving ~test
-0x7ffc7adf8800: Leaving main
+0x7fffb4e03c8e: Entering ~test
+0x7fffb4e03c8e: Leaving ~test
+0x7fffb4e03c8d: Entering ~test
+0x7fffb4e03c8d: Leaving ~test
+0x400a76: Leaving main
 
 */
 
 /*
 Notes:
-    When f(a) is invoked (input as 'pass by value', a temporary object is created using copy-constructor (0x7ffe88a2fe40)
-    When f(a) is returning (returning as 'pass by value'), another object is created (0x7ffe88a2fdf0) from  temporary object (0x7ffe88a2fe40) using copy-constructor
+    When f(a) is invoked (input as 'pass by value', a temporary object is created using copy-constructor (0x7fffb4e03c8f)
+    When f(a) is returning (returning as 'pass by value'), another object is created (0x7fffb4e03c8e) from  temporary object (0x7fffb4e03c8f) using copy-constructor
+        temp object (0x7fffb4e03c8f) is deleted at exit of f(a)
 
 */
