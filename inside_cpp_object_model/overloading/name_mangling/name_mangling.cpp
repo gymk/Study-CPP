@@ -21,8 +21,30 @@ This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) any later version.
 This program has absolutely no warranty.
 
-objdump -D a.out  > name_mangling.disassembly
-objdump -t > name_mangling.symbols
+objdump -D a.out > name_mangling.disassembly
+objdump -t a.out > name_mangling.symbols
+*/
+
+/*
+nm a.out > name_mangling.nm
+
+nm --v
+GNU nm (GNU Binutils for Ubuntu) 2.26.1
+Copyright (C) 2015 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
+*/
+
+/*
+nm a.out | c++filt > name_mangling.c++filt
+
+c++filt --v
+GNU c++filt (GNU Binutils for Ubuntu) 2.26.1
+Copyright (C) 2015 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
 */
 #include <iostream>
 
@@ -168,6 +190,7 @@ Notes:
     Compiler will generate names for functions by: (static polymorphism)
         1. class name
         2. parameter types
+    Since compiler does name mangaling, while linking, linker can call link to the relevant function/member
 
 test_namespace::CTest::test_print                   _ZN14test_namespace5CTest10test_printEv
 test_namespace::CTest::test_print(int i)            _ZN14test_namespace5CTest10test_printEi
@@ -185,3 +208,4 @@ test_namespace::test_print(double i)                _ZN14test_namespace10test_pr
 ::test_print(int i)                                 _Z10test_printi
 ::test_print(double i)                              _Z10test_printd
 */
+
