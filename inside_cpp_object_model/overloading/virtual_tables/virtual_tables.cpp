@@ -24,7 +24,7 @@ the GNU General Public License version 3 or (at your option) any later version.
 This program has absolutely no warranty.
 
 objdump -D a.out > virtual_tables.disassembly
-objdump -t a.out > virtual_tables.disassembly
+objdump -t a.out > virtual_tables.symbols
 */
 
 /*
@@ -125,8 +125,40 @@ private:
     int d;
 };
 
+class E : public A, public B
+{
+public:
+    E() {}
+    ~E() {}
+
+    virtual void set_int(int newVal)    {
+        e = newVal;
+    }
+    virtual int get_int(void)    {
+        return e;
+    }
+
+private:
+    int e;
+};
+
 int main()
 {
+    NoVirtual * nv = new NoVirtual;
+    delete nv;
+    A * a = new A;
+    delete a;
+    B * b = new B;
+    delete b;
+    C * c = new C;
+    delete c;
     D * d = new D;
     delete d;
+    E * e = new E;
+    delete e;
 }
+
+/*
+Links:
+    *) TO DO http://www.alexonlinux.com/how-inheritance-encapsulation-and-polymorphism-work-in-cpp
+*/

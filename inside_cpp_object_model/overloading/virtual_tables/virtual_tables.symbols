@@ -1,0 +1,131 @@
+
+a.out:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000400238 l    d  .interp	0000000000000000              .interp
+0000000000400254 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+0000000000400274 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+0000000000400298 l    d  .gnu.hash	0000000000000000              .gnu.hash
+00000000004002d0 l    d  .dynsym	0000000000000000              .dynsym
+0000000000400420 l    d  .dynstr	0000000000000000              .dynstr
+000000000040058c l    d  .gnu.version	0000000000000000              .gnu.version
+00000000004005a8 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+00000000004005f8 l    d  .rela.dyn	0000000000000000              .rela.dyn
+0000000000400658 l    d  .rela.plt	0000000000000000              .rela.plt
+00000000004006e8 l    d  .init	0000000000000000              .init
+0000000000400710 l    d  .plt	0000000000000000              .plt
+0000000000400780 l    d  .plt.got	0000000000000000              .plt.got
+0000000000400790 l    d  .text	0000000000000000              .text
+0000000000400d24 l    d  .fini	0000000000000000              .fini
+0000000000400d30 l    d  .rodata	0000000000000000              .rodata
+0000000000400ee4 l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+0000000000400fe8 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000601df8 l    d  .init_array	0000000000000000              .init_array
+0000000000601e08 l    d  .fini_array	0000000000000000              .fini_array
+0000000000601e10 l    d  .jcr	0000000000000000              .jcr
+0000000000601e18 l    d  .dynamic	0000000000000000              .dynamic
+0000000000601ff8 l    d  .got	0000000000000000              .got
+0000000000602000 l    d  .got.plt	0000000000000000              .got.plt
+0000000000602048 l    d  .data	0000000000000000              .data
+0000000000602058 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000601e10 l     O .jcr	0000000000000000              __JCR_LIST__
+00000000004007c0 l     F .text	0000000000000000              deregister_tm_clones
+0000000000400800 l     F .text	0000000000000000              register_tm_clones
+0000000000400840 l     F .text	0000000000000000              __do_global_dtors_aux
+0000000000602160 l     O .bss	0000000000000001              completed.7594
+0000000000601e08 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+0000000000400860 l     F .text	0000000000000000              frame_dummy
+0000000000601df8 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              virtual_tables.cpp
+0000000000602161 l     O .bss	0000000000000001              _ZStL8__ioinit
+00000000004009af l     F .text	000000000000003e              _Z41__static_initialization_and_destruction_0ii
+00000000004009ed l     F .text	0000000000000015              _GLOBAL__sub_I_main
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000401400 l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000601e10 l     O .jcr	0000000000000000              __JCR_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+0000000000400ee4 l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000602000 l     O .got.plt	0000000000000000              _GLOBAL_OFFSET_TABLE_
+0000000000601e08 l       .init_array	0000000000000000              __init_array_end
+0000000000601df8 l       .init_array	0000000000000000              __init_array_start
+0000000000601e18 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000602048  w      .data	0000000000000000              data_start
+0000000000400eb0  w    O .rodata	0000000000000003              _ZTS1C
+0000000000400d20 g     F .text	0000000000000002              __libc_csu_fini
+0000000000400790 g     F .text	000000000000002a              _start
+0000000000400a4a  w    F .text	0000000000000011              _ZN1A7get_intEv
+0000000000400a02  w    F .text	0000000000000017              _ZN1AC2Ev
+0000000000400ab6  w    F .text	0000000000000027              _ZN1CC1Ev
+0000000000400bee  w    F .text	0000000000000044              _ZN1EC2Ev
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000000000  w      *UND*	0000000000000000              _Jv_RegisterClasses
+0000000000000000       F *UND*	0000000000000000              _ZdlPv@@GLIBCXX_3.4
+0000000000400df8  w    O .rodata	0000000000000020              _ZTV1A
+0000000000400d24 g     F .fini	0000000000000000              _fini
+0000000000400bee  w    F .text	0000000000000044              _ZN1EC1Ev
+0000000000400c32  w    F .text	0000000000000044              _ZN1ED2Ev
+0000000000400d38  w    O .rodata	0000000000000040              _ZTV1E
+0000000000400c32  w    F .text	0000000000000044              _ZN1ED1Ev
+0000000000000000       F *UND*	0000000000000000              _ZNSt8ios_base4InitC1Ev@@GLIBCXX_3.4
+0000000000400e98  w    O .rodata	0000000000000018              _ZTI1C
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@@GLIBC_2.2.5
+0000000000400ade  w    F .text	0000000000000027              _ZN1CD2Ev
+0000000000400b1e  w    F .text	0000000000000011              _ZN1C7get_intEv
+0000000000000000       F *UND*	0000000000000000              __cxa_atexit@@GLIBC_2.2.5
+0000000000400a8c  w    F .text	0000000000000018              _ZN1B7set_intEi
+0000000000400e90  w    O .rodata	0000000000000003              _ZTS1D
+0000000000400a5c  w    F .text	0000000000000017              _ZN1BC1Ev
+0000000000400760       F *UND*	0000000000000000              _ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4
+0000000000000000  w      *UND*	0000000000000000              _ITM_deregisterTMCloneTable
+0000000000400a74  w    F .text	0000000000000017              _ZN1BD1Ev
+0000000000400d30 g     O .rodata	0000000000000004              _IO_stdin_used
+0000000000400be7  w    F .text	0000000000000006              _ZThn16_N1D7get_intEv
+0000000000000000  w      *UND*	0000000000000000              _ITM_registerTMCloneTable
+0000000000602048 g       .data	0000000000000000              __data_start
+0000000000400c94  w    F .text	0000000000000011              _ZN1E7get_intEv
+0000000000400b06  w    F .text	0000000000000018              _ZN1C7set_intEi
+0000000000400d78  w    O .rodata	0000000000000040              _ZTV1D
+0000000000602058  w    O .bss	0000000000000058              _ZTVN10__cxxabiv117__class_type_infoE@@CXXABI_1.3
+0000000000400b30  w    F .text	0000000000000044              _ZN1DC1Ev
+0000000000400b74  w    F .text	0000000000000044              _ZN1DD2Ev
+0000000000400a1a  w    F .text	0000000000000017              _ZN1AD1Ev
+0000000000400e58  w    O .rodata	0000000000000038              _ZTI1D
+0000000000400bb8  w    F .text	0000000000000018              _ZN1D7set_intEi
+0000000000602058 g     O .data	0000000000000000              .hidden __TMC_END__
+0000000000400ee0  w    O .rodata	0000000000000003              _ZTS1A
+0000000000400ca5  w    F .text	0000000000000006              _ZThn16_N1E7get_intEv
+0000000000400e50  w    O .rodata	0000000000000003              _ZTS1E
+0000000000602050 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000400cb0 g     F .text	0000000000000065              __libc_csu_init
+0000000000400c8e  w    F .text	0000000000000006              _ZThn16_N1E7set_intEi
+0000000000400aa4  w    F .text	0000000000000011              _ZN1B7get_intEv
+0000000000602058 g       .bss	0000000000000000              __bss_start
+0000000000400db8  w    O .rodata	0000000000000020              _ZTV1C
+00000000006020b0  w    O .bss	0000000000000058              _ZTVN10__cxxabiv120__si_class_type_infoE@@CXXABI_1.3
+0000000000400ed0  w    O .rodata	0000000000000010              _ZTI1A
+0000000000400ab6  w    F .text	0000000000000027              _ZN1CC2Ev
+0000000000400ade  w    F .text	0000000000000027              _ZN1CD1Ev
+0000000000400e18  w    O .rodata	0000000000000038              _ZTI1E
+0000000000400bd6  w    F .text	0000000000000011              _ZN1D7get_intEv
+0000000000400ec8  w    O .rodata	0000000000000003              _ZTS1B
+0000000000400a1a  w    F .text	0000000000000017              _ZN1AD2Ev
+0000000000602108  w    O .bss	0000000000000058              _ZTVN10__cxxabiv121__vmi_class_type_infoE@@CXXABI_1.3
+0000000000602168 g       .bss	0000000000000000              _end
+0000000000400b74  w    F .text	0000000000000044              _ZN1DD1Ev
+0000000000400a02  w    F .text	0000000000000017              _ZN1AC1Ev
+0000000000400c76  w    F .text	0000000000000018              _ZN1E7set_intEi
+0000000000602058 g       .data	0000000000000000              _edata
+0000000000400dd8  w    O .rodata	0000000000000020              _ZTV1B
+0000000000400a32  w    F .text	0000000000000018              _ZN1A7set_intEi
+0000000000000000       F *UND*	0000000000000000              _Znwm@@GLIBCXX_3.4
+0000000000400a5c  w    F .text	0000000000000017              _ZN1BC2Ev
+0000000000400b30  w    F .text	0000000000000044              _ZN1DC2Ev
+0000000000400eb8  w    O .rodata	0000000000000010              _ZTI1B
+0000000000400bd0  w    F .text	0000000000000006              _ZThn16_N1D7set_intEi
+0000000000400a74  w    F .text	0000000000000017              _ZN1BD2Ev
+0000000000400886 g     F .text	0000000000000129              main
+00000000004006e8 g     F .init	0000000000000000              _init
+
+

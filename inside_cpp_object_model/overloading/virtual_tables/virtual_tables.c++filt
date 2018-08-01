@@ -1,73 +1,94 @@
 0000000000602058 B __bss_start
-0000000000602108 b completed.7594
+0000000000602160 b completed.7594
                  U __cxa_atexit@@GLIBC_2.2.5
 0000000000602048 D __data_start
 0000000000602048 W data_start
-0000000000400760 t deregister_tm_clones
-00000000004007e0 t __do_global_dtors_aux
+00000000004007c0 t deregister_tm_clones
+0000000000400840 t __do_global_dtors_aux
 0000000000601e08 t __do_global_dtors_aux_fini_array_entry
 0000000000602050 D __dso_handle
 0000000000601e18 d _DYNAMIC
 0000000000602058 D _edata
-0000000000602110 B _end
-0000000000400ab4 T _fini
-0000000000400800 t frame_dummy
+0000000000602168 B _end
+0000000000400d24 T _fini
+0000000000400860 t frame_dummy
 0000000000601df8 t __frame_dummy_init_array_entry
-0000000000400f48 r __FRAME_END__
+0000000000401400 r __FRAME_END__
 0000000000602000 d _GLOBAL_OFFSET_TABLE_
-00000000004008ab t _GLOBAL__sub_I_main
+00000000004009ed t _GLOBAL__sub_I_main
                  w __gmon_start__
-0000000000400bb4 r __GNU_EH_FRAME_HDR
-0000000000400688 T _init
+0000000000400ee4 r __GNU_EH_FRAME_HDR
+00000000004006e8 T _init
 0000000000601e08 t __init_array_end
 0000000000601df8 t __init_array_start
-0000000000400ac0 R _IO_stdin_used
+0000000000400d30 R _IO_stdin_used
                  w _ITM_deregisterTMCloneTable
                  w _ITM_registerTMCloneTable
 0000000000601e10 d __JCR_END__
 0000000000601e10 d __JCR_LIST__
                  w _Jv_RegisterClasses
-0000000000400ab0 T __libc_csu_fini
-0000000000400a40 T __libc_csu_init
+0000000000400d20 T __libc_csu_fini
+0000000000400cb0 T __libc_csu_init
                  U __libc_start_main@@GLIBC_2.2.5
-0000000000400826 T main
-00000000004007a0 t register_tm_clones
-0000000000400730 T _start
+0000000000400886 T main
+0000000000400800 t register_tm_clones
+0000000000400790 T _start
 0000000000602058 D __TMC_END__
-000000000040086d t __static_initialization_and_destruction_0(int, int)
+00000000004009af t __static_initialization_and_destruction_0(int, int)
                  U operator delete(void*)@@GLIBCXX_3.4
-0000000000400908 W A::get_int()
-00000000004008f0 W A::set_int(int)
-00000000004008c0 W A::A()
-00000000004008c0 W A::A()
-00000000004008d8 W A::~A()
-00000000004008d8 W A::~A()
-0000000000400962 W B::get_int()
-000000000040094a W B::set_int(int)
-000000000040091a W B::B()
-000000000040091a W B::B()
-0000000000400932 W B::~B()
-0000000000400932 W B::~B()
-0000000000400a1a W D::get_int()
-00000000004009fc W D::set_int(int)
-0000000000400974 W D::D()
-0000000000400974 W D::D()
-00000000004009b8 W D::~D()
-00000000004009b8 W D::~D()
+0000000000400a4a W A::get_int()
+0000000000400a32 W A::set_int(int)
+0000000000400a02 W A::A()
+0000000000400a02 W A::A()
+0000000000400a1a W A::~A()
+0000000000400a1a W A::~A()
+0000000000400aa4 W B::get_int()
+0000000000400a8c W B::set_int(int)
+0000000000400a5c W B::B()
+0000000000400a5c W B::B()
+0000000000400a74 W B::~B()
+0000000000400a74 W B::~B()
+0000000000400b1e W C::get_int()
+0000000000400b06 W C::set_int(int)
+0000000000400ab6 W C::C()
+0000000000400ab6 W C::C()
+0000000000400ade W C::~C()
+0000000000400ade W C::~C()
+0000000000400bd6 W D::get_int()
+0000000000400bb8 W D::set_int(int)
+0000000000400b30 W D::D()
+0000000000400b30 W D::D()
+0000000000400b74 W D::~D()
+0000000000400b74 W D::~D()
+0000000000400c94 W E::get_int()
+0000000000400c76 W E::set_int(int)
+0000000000400bee W E::E()
+0000000000400bee W E::E()
+0000000000400c32 W E::~E()
+0000000000400c32 W E::~E()
                  U std::ios_base::Init::Init()@@GLIBCXX_3.4
                  U std::ios_base::Init::~Init()@@GLIBCXX_3.4
                  U operator new(unsigned long)@@GLIBCXX_3.4
-0000000000602109 b std::__ioinit
-0000000000400a2b W non-virtual thunk to D::get_int()
-0000000000400a14 W non-virtual thunk to D::set_int(int)
-0000000000400ba0 V typeinfo for A
-0000000000400b88 V typeinfo for B
-0000000000400b48 V typeinfo for D
-0000000000400bb0 V typeinfo name for A
-0000000000400b98 V typeinfo name for B
-0000000000400b80 V typeinfo name for D
-0000000000400b28 V vtable for A
-0000000000400b08 V vtable for B
-0000000000400ac8 V vtable for D
+0000000000602161 b std::__ioinit
+0000000000400be7 W non-virtual thunk to D::get_int()
+0000000000400bd0 W non-virtual thunk to D::set_int(int)
+0000000000400ca5 W non-virtual thunk to E::get_int()
+0000000000400c8e W non-virtual thunk to E::set_int(int)
+0000000000400ed0 V typeinfo for A
+0000000000400eb8 V typeinfo for B
+0000000000400e98 V typeinfo for C
+0000000000400e58 V typeinfo for D
+0000000000400e18 V typeinfo for E
+0000000000400ee0 V typeinfo name for A
+0000000000400ec8 V typeinfo name for B
+0000000000400eb0 V typeinfo name for C
+0000000000400e90 V typeinfo name for D
+0000000000400e50 V typeinfo name for E
+0000000000400df8 V vtable for A
+0000000000400dd8 V vtable for B
+0000000000400db8 V vtable for C
+0000000000400d78 V vtable for D
+0000000000400d38 V vtable for E
 0000000000602058 V vtable for __cxxabiv1::__class_type_info@@CXXABI_1.3
-00000000006020b0 V vtable for __cxxabiv1::__vmi_class_type_info@@CXXABI_1.3
+00000000006020b0 V vtable for __cxxabiv1::__si_class_type_info@@CXXABI_1.3
+0000000000602108 V vtable for __cxxabiv1::__vmi_class_type_info@@CXXABI_1.3
