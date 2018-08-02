@@ -18,24 +18,34 @@ _In C++, there are three things that every object should be able to do:_
 
 _C++11 and above:_
 
-From C++11 onwards additionally following this may also be able to do
+From C++11 onwards additionally following things can be done:
     
 - An object should be able to initialize itself by moving members from another rvalue instance of same class
     - move constructor
         - e.g., `TFoo::TFoo(TFoo && rhs)`
         - since we are moving, __rhs object should NOT be const__
-        - note __&&__ to rhs, we are taking rvalue object
+        - note __&&__ to rhs, we are taking _rvalue object_
 - An object should be able to assume semantice state of another rvalue instance of same class by moving its members
     - move assignment operator
         - e.g., `TFoo& TFoo::operator=(TFoo && rhs)`
         - since we are moving, __rhs object should NOT be const__
-        - note __&&__ to rhs, we are taking rvalue object
+        - note __&&__ to rhs, we are taking _rvalue object_
     
-_Uniform Initializatioin:_
-    
+_Uniform Initializatioin: (braced initialization list)_
+
+if you define list-constructor, better define list-assignment operator as well
+
 - An object should be able to initialize itself from a std::initializer-list which enables uniform initialization
-    - std::list-initializers (for uniform initialization)
-        - e.g., `TO DO`
+    - list copy constructor
+        - e.g., `TFoo::TFoo(const std::initializer_list<T> & list)`
+        - __const rhs__ is _rquired_, otherwise unnecessarily temp list initializer object will be created (since it is pass-by-value)
+        - _T_ can be required data that need to assigned to this object
+- An object should be able to assume the semantics from a list
+    - list assignment operator
+        - e.g., `void operator=(const std::initializer_list<T> & list)`
+        - __const rhs__ is _rquired_, otherwise unnecessarily temp list initializer object will be created (since it is pass-by-value)
+        - since it assigning values to current object, there is no return value from this operator=
+
 
 # Links
     Assignment Operator
