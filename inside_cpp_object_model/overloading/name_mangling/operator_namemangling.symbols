@@ -1,0 +1,119 @@
+
+a.out:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000400238 l    d  .interp	0000000000000000              .interp
+0000000000400254 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+0000000000400274 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+0000000000400298 l    d  .gnu.hash	0000000000000000              .gnu.hash
+00000000004002d0 l    d  .dynsym	0000000000000000              .dynsym
+0000000000400450 l    d  .dynstr	0000000000000000              .dynstr
+0000000000400618 l    d  .gnu.version	0000000000000000              .gnu.version
+0000000000400638 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+00000000004006b8 l    d  .rela.dyn	0000000000000000              .rela.dyn
+00000000004006e8 l    d  .rela.plt	0000000000000000              .rela.plt
+00000000004007d8 l    d  .init	0000000000000000              .init
+0000000000400800 l    d  .plt	0000000000000000              .plt
+00000000004008b0 l    d  .plt.got	0000000000000000              .plt.got
+00000000004008c0 l    d  .text	0000000000000000              .text
+00000000004011f4 l    d  .fini	0000000000000000              .fini
+0000000000401200 l    d  .rodata	0000000000000000              .rodata
+00000000004015a8 l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+00000000004016e0 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000401bfc l    d  .gcc_except_table	0000000000000000              .gcc_except_table
+0000000000601de8 l    d  .init_array	0000000000000000              .init_array
+0000000000601df8 l    d  .fini_array	0000000000000000              .fini_array
+0000000000601e00 l    d  .jcr	0000000000000000              .jcr
+0000000000601e08 l    d  .dynamic	0000000000000000              .dynamic
+0000000000601ff8 l    d  .got	0000000000000000              .got
+0000000000602000 l    d  .got.plt	0000000000000000              .got.plt
+0000000000602068 l    d  .data	0000000000000000              .data
+0000000000602080 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000601e00 l     O .jcr	0000000000000000              __JCR_LIST__
+00000000004008f0 l     F .text	0000000000000000              deregister_tm_clones
+0000000000400930 l     F .text	0000000000000000              register_tm_clones
+0000000000400970 l     F .text	0000000000000000              __do_global_dtors_aux
+0000000000602190 l     O .bss	0000000000000001              completed.7594
+0000000000601df8 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+0000000000400990 l     F .text	0000000000000000              frame_dummy
+0000000000601de8 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              operator_namemangling.cpp
+0000000000602191 l     O .bss	0000000000000001              _ZStL8__ioinit
+0000000000400d47 l     F .text	000000000000003e              _Z41__static_initialization_and_destruction_0ii
+0000000000400d85 l     F .text	0000000000000015              _GLOBAL__sub_I__ZN14test_namespace10test_printEv
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000401bf8 l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000601e00 l     O .jcr	0000000000000000              __JCR_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+00000000004015a8 l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000602000 l     O .got.plt	0000000000000000              _GLOBAL_OFFSET_TABLE_
+0000000000601df8 l       .init_array	0000000000000000              __init_array_end
+0000000000601de8 l       .init_array	0000000000000000              __init_array_start
+0000000000601e08 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000602068  w      .data	0000000000000000              data_start
+0000000000400fd0  w    F .text	000000000000002e              _ZN5CTest10test_printEi
+0000000000400f8c  w    F .text	000000000000000b              _ZN5CTestC2Ev
+00000000004011f0 g     F .text	0000000000000002              __libc_csu_fini
+0000000000400f2c  w    F .text	000000000000002f              _ZNK14test_namespace5CTestgeERKS0_
+0000000000400f98  w    F .text	000000000000000b              _ZN5CTestD2Ev
+00000000004008c0 g     F .text	000000000000002a              _start
+0000000000400ecc  w    F .text	000000000000002f              _ZNK14test_namespace5CTestgtERKS0_
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000000000  w      *UND*	0000000000000000              _Jv_RegisterClasses
+0000000000400a52 g     F .text	000000000000002a              _Z10test_printi
+0000000000400a7c g     F .text	000000000000002c              _Z10test_printd
+0000000000400db2  w    F .text	000000000000002b              _ZN14test_namespace5CTest10test_printEv
+00000000004011f4 g     F .fini	0000000000000000              _fini
+0000000000000000       F *UND*	0000000000000000              _ZNSt8ios_base4InitC1Ev@@GLIBCXX_3.4
+000000000040105e  w    F .text	000000000000002f              _ZN5CTestplERKS_
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@@GLIBC_2.2.5
+00000000004009b6 g     F .text	0000000000000023              _ZN14test_namespace10test_printEv
+0000000000000000       F *UND*	0000000000000000              __cxa_atexit@@GLIBC_2.2.5
+0000000000400ffe  w    F .text	0000000000000030              _ZN5CTest10test_printEd
+0000000000400840       F *UND*	0000000000000000              _ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4
+0000000000000000  w      *UND*	0000000000000000              _ITM_deregisterTMCloneTable
+0000000000000000       F *UND*	0000000000000000              _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@@GLIBCXX_3.4
+0000000000401200 g     O .rodata	0000000000000004              _IO_stdin_used
+0000000000400dde  w    F .text	000000000000002e              _ZN14test_namespace5CTest10test_printEi
+0000000000400a03 g     F .text	000000000000002c              _ZN14test_namespace10test_printEd
+000000000040114e  w    F .text	000000000000002f              _ZNK5CTestleERKS_
+0000000000000000  w      *UND*	0000000000000000              _ITM_registerTMCloneTable
+0000000000602068 g       .data	0000000000000000              __data_start
+000000000040108e  w    F .text	000000000000002f              _ZN5CTestmiERKS_
+0000000000400da6  w    F .text	000000000000000b              _ZN14test_namespace5CTestD1Ev
+00000000004010be  w    F .text	000000000000002f              _ZNK5CTestgtERKS_
+0000000000400f8c  w    F .text	000000000000000b              _ZN5CTestC1Ev
+000000000040111e  w    F .text	000000000000002f              _ZNK5CTestgeERKS_
+0000000000602078 g     O .data	0000000000000000              .hidden __TMC_END__
+0000000000602080 g     O .bss	0000000000000110              _ZSt4cout@@GLIBCXX_3.4
+0000000000602070 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000401180 g     F .text	0000000000000065              __libc_csu_init
+00000000004010ee  w    F .text	000000000000002f              _ZNK5CTestltERKS_
+0000000000400d9a  w    F .text	000000000000000b              _ZN14test_namespace5CTestC2Ev
+0000000000400e0c  w    F .text	0000000000000030              _ZN14test_namespace5CTest10test_printEd
+0000000000400efc  w    F .text	000000000000002f              _ZNK14test_namespace5CTestltERKS0_
+0000000000602078 g       .bss	0000000000000000              __bss_start
+0000000000400e3c  w    F .text	000000000000002f              _ZN14test_namespace5CTestaSERKS0_
+0000000000000000       F *UND*	0000000000000000              __stack_chk_fail@@GLIBC_2.4
+0000000000400fa4  w    F .text	000000000000002b              _ZN5CTest10test_printEv
+0000000000400a2f g     F .text	0000000000000023              _Z10test_printv
+0000000000400e9c  w    F .text	000000000000002f              _ZN14test_namespace5CTestmiERKS0_
+0000000000400f5c  w    F .text	000000000000002f              _ZNK14test_namespace5CTestleERKS0_
+000000000040102e  w    F .text	000000000000002f              _ZN5CTestaSERKS_
+0000000000602198 g       .bss	0000000000000000              _end
+0000000000000000       F *UND*	0000000000000000              _ZNSolsEPFRSoS_E@@GLIBCXX_3.4
+0000000000400880       F *UND*	0000000000000000              _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@@GLIBCXX_3.4
+0000000000400f98  w    F .text	000000000000000b              _ZN5CTestD1Ev
+0000000000602078 g       .data	0000000000000000              _edata
+0000000000400da6  w    F .text	000000000000000b              _ZN14test_namespace5CTestD2Ev
+0000000000400d9a  w    F .text	000000000000000b              _ZN14test_namespace5CTestC1Ev
+0000000000400890       F *UND*	0000000000000000              __gxx_personality_v0@@CXXABI_1.3
+0000000000000000       F *UND*	0000000000000000              _Unwind_Resume@@GCC_3.0
+00000000004009d9 g     F .text	000000000000002a              _ZN14test_namespace10test_printEi
+0000000000400aa8 g     F .text	000000000000029f              main
+00000000004007d8 g     F .init	0000000000000000              _init
+0000000000400e6c  w    F .text	000000000000002f              _ZN14test_namespace5CTestplERKS0_
+
+
