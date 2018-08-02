@@ -15,6 +15,7 @@ _In C++, there are three things that every object should be able to do:_
         - e.g., `TFoo& TFoo::operator=(const TFoo & rhs)`
         - __const rhs__ is _required_ to have assignment from const objects
         - __get rhs by reference__, otherwise unnecessarily temp object will be created for rhs (since it is pass-by-value)
+        - if you do not want chaining, you can have return type as void. i.e., if void is return type then you can't do e.g., `x = y = z = 16`.
 
 _C++11 and above:_
 
@@ -45,6 +46,9 @@ if you define list-constructor, better define list-assignment operator as well
         - e.g., `void operator=(const std::initializer_list<T> & list)`
         - __const rhs__ is _rquired_, otherwise unnecessarily temp list initializer object will be created (since it is pass-by-value)
         - since it assigning values to current object, there is no return value from this operator=
+        - _if you want chaining assignment operator, return this as reference_
+            - e.g., `TFoo& operator=(const std::initializer_list<T> & list)`
+            - x  y = z = { 1, 2, 3, 4 };
 
 
 # Links
