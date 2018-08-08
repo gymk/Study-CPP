@@ -1,6 +1,6 @@
 /*
 g++ -fdump-class-hierarchy virtual_tables.cpp 
-g++ virtual_tables.cpp 
+g++ virtual_tables.cpp -o virtual_tables.out
 
 g++ -v
 Using built-in specs.
@@ -23,12 +23,12 @@ This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) any later version.
 This program has absolutely no warranty.
 
-objdump -D a.out > virtual_tables.disassembly
-objdump -t a.out > virtual_tables.symbols
+objdump -D virtual_tables.out > virtual_tables.disassembly
+objdump -t virtual_tables.out > virtual_tables.symbols
 */
 
 /*
-nm a.out > virtual_tables.nm
+nm virtual_tables.out > virtual_tables.nm
 
 nm --v
 GNU nm (GNU Binutils for Ubuntu) 2.26.1
@@ -39,7 +39,7 @@ This program has absolutely no warranty.
 */
 
 /*
-nm a.out | c++filt > virtual_tables.c++filt
+nm virtual_tables.out | c++filt > virtual_tables.c++filt
 
 c++filt --v
 GNU c++filt (GNU Binutils for Ubuntu) 2.26.1

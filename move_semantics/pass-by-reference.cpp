@@ -15,7 +15,6 @@ gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)
 */
 
 #include <iostream>
-#include "../utils/scopelog.h"
 
 typedef struct FuncEntryLog
 {
@@ -49,23 +48,30 @@ typedef struct test
         FuncEntryLog fs("CopyConstructor", this);
         rhs.PrintAddress("Inside CopyConstructor, details of rhs: ");
     }
+    // move constructor
+    test(test && rhs)
+    {
+        FuncEntryLog fs("MoveConstructor", this);
+        rhs.PrintAddress("Inside MoveConstructor, details of rhs: ");
+    }
     void PrintAddress(const char * msg) const
     {
         std::cout << '\t' << msg << ' ' << this << std::endl;
     }
 } test;
 
-// A pass-by-value function which accepts input as 'pass by value' and returns by 'pass by value'
+// A pass-by-reference function which accepts input as 'pass by value' and returns by 'pass by reference'
+// if return type is 'pass-by-value' o
 template <typename T>
-T f(T a)
-{ LOG_CALL; 
+T & f(T & a)
+{
     FuncEntryLog fs(__FUNCTION__, nullptr);
-    a.PrintAddress("Inside f, details of a: ");
+    a.PrintAddress("Inside f &, details of a: ");
     return a;
 }
 
 int main()
-{ LOG_CALL; 
+{
     FuncEntryLog fs(__FUNCTION__, (void*)&main);
     std::cout << "creating a\n";
     test a;
@@ -81,34 +87,29 @@ Output:
 
 0x400a76: Entering main
 creating a
-0x7fffb4e03c8d: Entering default constructor
-0x7fffb4e03c8d: Leaving default constructor
-	Inside main, details of a:  0x7fffb4e03c8d
+0x7ffd979e2e7e: Entering default constructor
+0x7ffd979e2e7e: Leaving default constructor
+	Inside main, details of a:  0x7ffd979e2e7e
 creating t
-0x7fffb4e03c8f: Entering CopyConstructor
-	Inside CopyConstructor, details of rhs:  0x7fffb4e03c8d
-0x7fffb4e03c8f: Leaving CopyConstructor
 0: Entering f
-	Inside f, details of a:  0x7fffb4e03c8f
-0x7fffb4e03c8e: Entering CopyConstructor
-	Inside CopyConstructor, details of rhs:  0x7fffb4e03c8f
-0x7fffb4e03c8e: Leaving CopyConstructor
+	Inside f, details of a:  0x7ffd979e2e7e
+0x7ffd979e2e7f: Entering CopyConstructor
+	Inside CopyConstructor, details of rhs:  0x7ffd979e2e7e
+0x7ffd979e2e7f: Leaving CopyConstructor
 0: Leaving f
-0x7fffb4e03c8f: Entering ~test
-0x7fffb4e03c8f: Leaving ~test
-	Inside main, details of t:  0x7fffb4e03c8e
+	Inside main, details of t:  0x7ffd979e2e7f
 leaving main
-0x7fffb4e03c8e: Entering ~test
-0x7fffb4e03c8e: Leaving ~test
-0x7fffb4e03c8d: Entering ~test
-0x7fffb4e03c8d: Leaving ~test
+0x7ffd979e2e7f: Entering ~test
+0x7ffd979e2e7f: Leaving ~test
+0x7ffd979e2e7e: Entering ~test
+0x7ffd979e2e7e: Leaving ~test
 0x400a76: Leaving main
 
 */
 
 /*
 Notes:
-    When f(a) is invoked (input as 'pass by value', a temporary object is created using copy-constructor (0x7fffb4e03c8f)
+    When f(a) is invoked (input as 'pass by reference', a temporary object is created using copy-constructor (0x7fffb4e03c8f)
     When f(a) is returning (returning as 'pass by value'), another object is created (0x7fffb4e03c8e) from  temporary object (0x7fffb4e03c8f) using copy-constructor
         temp object (0x7fffb4e03c8f) is deleted at exit of f(a)
 

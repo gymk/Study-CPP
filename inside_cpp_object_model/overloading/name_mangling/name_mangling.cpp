@@ -1,5 +1,5 @@
 /*
-g++ name_mangling.cpp
+g++ name_mangling.cpp -o name_mangling.out
 
 g++ -v
 Using built-in specs.
@@ -21,12 +21,12 @@ This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) any later version.
 This program has absolutely no warranty.
 
-objdump -D a.out > name_mangling.disassembly
-objdump -t a.out > name_mangling.symbols
+objdump -D name_mangling.out > name_mangling.disassembly
+objdump -t name_mangling.out > name_mangling.symbols
 */
 
 /*
-nm a.out > name_mangling.nm
+nm name_mangling.out > name_mangling.nm
 
 nm --v
 GNU nm (GNU Binutils for Ubuntu) 2.26.1
@@ -37,7 +37,7 @@ This program has absolutely no warranty.
 */
 
 /*
-nm a.out | c++filt > name_mangling.c++filt
+nm name_mangling.out | c++filt > name_mangling.c++filt
 
 c++filt --v
 GNU c++filt (GNU Binutils for Ubuntu) 2.26.1
