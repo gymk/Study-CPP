@@ -12,6 +12,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
 */
 
+#define ENABLE_CUSTOM_NEW_DELETE_OVERRIDE
+
 #include <iostream>
 #include <cstdlib>
 #include <vector>
