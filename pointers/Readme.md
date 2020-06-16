@@ -1,5 +1,6 @@
 
-## Memory
+# Memory
+
 In C++, data can be stored in three kinds of places
 
     1. On stack (local variables)
@@ -7,11 +8,15 @@ In C++, data can be stored in three kinds of places
     3. In static section (static variables)
 
 ## new and delete
+
 ### new
 
 performs following actions in behind
 
+    ```c++
     CTest* pTest = new CTest;
+    ```
+
     - Makes an OS call to allocate a chunk of memory (of size CTest)
     - Call the constructor of CTest
         - Since no arguments passed, it will invoke default constructor CTest()
@@ -48,17 +53,43 @@ Performs following actions in behind
 
 #### placement new
 
-
     *) Apart from new and delete, C++ provides another overload new operator named 'placement new' which allows to create an object from existing memory, providing facility to invoke that relevant class constructor (In C++ you can't call a constructor, to enable such thing from existing memory placement new can be used)
 
     *) Since placement new creates object from existing memory, we can't call delete
     *) So we have any resource get released, we have to call that relevant class destructor (In C++, unlike constructor, we are allowed to invoke destructors)
 
+## Smart Pointers
 
+- It is class which wraps a raw pointer, to manage the life time of the raw pointer
+- The most fundamental job of smart pointer is to remove the chances of memory leak
+- It makes sure that the object is deleted if it is not referenced any more
 
-# Links
+### Types
 
-    - http://www.drdobbs.com/cpp/calling-constructors-with-placement-new/232901023
-    - http://www.scs.stanford.edu/~dm/home/papers/c++-new.html
-    - http://jrruethe.github.io/blog/2015/08/23/placement-new/
-    - http://blog.aaronballman.com/2011/08/the-placement-new-operator/
+- Basically all these pointers are templates
+
+#### std::unique_ptr
+
+- Allows only one owner to the underlying pointer
+- use *, -> to deference the underlying pointer (these operators are overloaded in std::unique_ptr)
+- This will delete the underlying pointer even when exception occurs
+
+#### std::shared_ptr
+
+- Allows multiple owner to the underlying pointer (Reference counting is maintained)
+
+#### std::weak_ptr
+
+- A special type of shared_ptr which doesn't count the reference
+
+## Links
+
+- <http://www.drdobbs.com/cpp/calling-constructors-with-placement-new/232901023>
+- <http://www.scs.stanford.edu/~dm/home/papers/c++-new.html>
+- <http://jrruethe.github.io/blog/2015/08/23/placement-new/>
+- <http://blog.aaronballman.com/2011/08/the-placement-new-operator/>
+- <https://www.modernescpp.com/index.php/c-core-guidelines-rules-to-smart-pointers>
+
+## Video Links
+
+- <https://www.youtube.com/watch?v=wUzn0HljjRE&list=PLk6CEY9XxSIAI2K-sxrKzzSyT6UZR5ObP>

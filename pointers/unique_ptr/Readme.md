@@ -1,49 +1,59 @@
-# std::unqiue_ptr
+# std::unique_ptr
+
     Object memory is managed by std::unique_ptr
-    Ownership of object memory lies within std::unqiue_ptr
-    So owndership can only be moved, can't be copied or assigned
+    Ownership of object memory lies within std::unique_ptr
+    So ownership can only be moved, can't be copied or assigned
 
 ## types
 
-    - Scalar: to hold single object
-        - std::unique_ptr<int>
+        - Scalar: to hold single object
+            - std::unique_ptr<int>
+    
+        - Array: to hold array of objects
+            - std::unique_ptr<int[]>
 
-    - Array: to hold array of objects
-        - std::unique_ptr<int[]>
+## creating std::unique_ptr
 
-## Creating std::unique_ptr
         *) C++14 and above
             auto p = std::make_unique<type>(constructor to invoke for that type)
             auto p = std::make_unique<type[]>(n)(constructor to invoke for that type)
         *) C++11
-            std::unique_ptr<type> variable(new type(construtor to invoke for that type));
+            std::unique_ptr<type> variable(new type(constructor to invoke for that type));
         *) < C++11
             not supported
 
 ## operations
 
 ### copy
+
         - Not possible
-        - std::unqiue<int> p(q);   // if q also of type std::unqiue<int> compile error
+        - std::unique<int> p(q);   // if q also of type std::unique<int> compile error
 
 ### assignment
+
         - Not possible
-        - std::unqiue<int> p = q;   // if q also of type std::unqiue<int> compile error
+        - std::unique<int> p = q;   // if q also of type std::unique<int> compile error
+
 ### move
-        std::unqiue<int> p = std::move(q);
-    
+
+        std::unique<int> p = std::move(q);
+
 ### obtaining object address
-    deferencing
+
+    Dereferencing
         *p
-        Once object release() or reset(), you should never try to deference it, because it will have nullptr after release/reset, deferecing nullptr is undefined (mostly crash)
+        Once object release() or reset(), you should never try to deference it, because it will have nullptr after release/reset, dereferencing nullptr is undefined (mostly crash)
     p.get()
-        will give the address of the object owned by std::unqiue_ptr
+        will give the address of the object owned by std::unique_ptr
         If it has valid object, it will give the address of the object, otherwise nullptr
 
-### Releasing ownership
+### releasing ownership
+
     - get object address (releasing the ownership but not releasing the memory)
         int * pI = p.release();
-### Empty
+
+### empty
+
     - to delete the object
         p.reset()
         This will delete the object

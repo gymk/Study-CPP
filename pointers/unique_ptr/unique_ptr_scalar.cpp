@@ -15,7 +15,7 @@ gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10)
 #include <memory>
 #include <thread>
 
-// Overloading new and delete to check std::unqiue_ptr alloc/ dealloc sequences
+// Overloading new and delete to check std::unique_ptr alloc/ dealloc sequences
 void* operator new(size_t t)
 {
     void * p = malloc(t);
@@ -71,7 +71,7 @@ void UniquePtr_CheckOwnershipRelease(void)
 
     std::cout << "unique_ptr object address before release: " << pA.get() << std::endl;  // pA will have null
     int * pI = pA.release();
-    // note below that get() is used, if deferenced it will crash the program
+    // note below that get() is used, if dereferenced it will crash the program
     std::cout << "unique_ptr object address after release: " << pA.get() << std::endl;  // pA will have null
     std::cout << "Value of pI: " << pI << std::endl;  // should print the address given by std::unique_ptr
     std::cout << "Value @ *pI: " << *pI << std::endl;  // 30 should be printed
@@ -87,7 +87,7 @@ void UniquePtr_CheckReset(void)
 
     std::cout << "unique_ptr object address before release: " << pA.get() << std::endl;  // pA will have null
     pA.reset();
-    // note below that get() is used, if deferenced it will crash the program
+    // note below that get() is used, if dereferenced it will crash the program
     std::cout << "unique_ptr object address after release: " << pA.get() << std::endl;  // pA will have null
     std::cout << "Exit " << __FUNCTION__ << std::endl;
 
@@ -182,7 +182,7 @@ Exit UniquePtr_CheckReset
 
 /*
 Notes:
-    *) two kinds of uniqute_ptr available
+    *) two kinds of unique_ptr available
         *) scalar
             eg., std::unique_ptr<int>
         *) array
@@ -192,12 +192,12 @@ Notes:
             auto p = std::make_unique<type>(constructor to invoke for that type)
             auto p = std::make_unique<type[]>(n)(constructor to invoke for that type)
         *) C++11
-            std::unique_ptr<type> variable(new type(construtor to invoke for that type));
+            std::unique_ptr<type> variable(new type(constructor to invoke for that type));
         *) < C++11
             not supported
-    *) no copy or assginment constructor
+    *) no copy or assignment constructor
     *) only move constructor for moving the ownership
-    *) memory is owned by std::uniqure_ptr only
+    *) memory is owned by std::unique_ptr only
     *) Delete
         *) on scope exit of std::unique_ptr<> memory will be free'd
         *) alternatively p.reset() will release the memory
