@@ -49,7 +49,7 @@ int main()
 
     HexDump(aui8Buffer, sizeof(aui8Buffer));
 
-    // manualy invoke destructor
+    // manually invoke destructor
     pTest->~CTest();
 
     // using placement new, create CTest object from memory - overloaded constructor
@@ -58,7 +58,7 @@ int main()
     CTest *pTest2 = new (&aui8Buffer) CTest(60, 'b');
     std::cout << "pTest2: " << static_cast<void*>(aui8Buffer) << std::endl;
     HexDump(aui8Buffer, sizeof(aui8Buffer));
-    // manualy invoke destructor
+    // manually invoke destructor
     pTest->~CTest();
 }
 
@@ -84,7 +84,7 @@ default destructor invoked: 60 b
 /*
 Notes:
     *) we need to invoke desctructor manually to release any resource acquired by constructor (which is invoked by 'placement new')
-    *) Ensure that the memory you are providing has enough space to accomodate whole struct/class
+    *) Ensure that the memory you are providing has enough space to accommodate whole struct/class
         invalid: unsigned char aui8Buff[sizeof(CTest)];
         valid: alignas(align size) unsigned char aui8Buff[sizeof(CTest)];
 */

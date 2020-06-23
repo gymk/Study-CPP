@@ -1,7 +1,7 @@
 # std::shared_ptr
 
-    - it uses atomic integers for synchronized reference count increment (in std::shared_ptr (copy) constructor) and decrement (in std:sahred_ptr destructor)
-    - if possible moving ownership or referencing is best (which asks why do we need a constly shared_ptr as a first-hand) [refer](http://seanmiddleditch.com/dangers-of-stdshared_ptr/)
+    - it uses atomic integers for synchronized reference count increment (in std::shared_ptr (copy) constructor) and decrement (in std:shared_ptr destructor)
+    - if possible moving ownership or referencing is best (which asks why do we need a costly shared_ptr as a first-hand) [refer](http://seanmiddleditch.com/dangers-of-stdshared_ptr/)
 
 ## creating
 
@@ -51,7 +51,7 @@
 
     TO DO
 
-### assignemnt
+### assignment
 
     TO DO
 

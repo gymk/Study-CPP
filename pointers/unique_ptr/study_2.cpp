@@ -23,7 +23,10 @@ int main() {
   Foo * pf = new Foo(30);
   std::unique_ptr<Foo> p3(pf);
 
-  std::cout << p1->getX() << " " << (*p2).getX() << " " << p3.get()->getX() << std::endl;
+  std::cout << "p1=" << p1->getX() << std::endl;
+  std::cout << "p2=" << (*p2).getX() << std::endl;
+  std::cout << "p3=" << p3.get()->getX() << std::endl;
+
 
   // ######
   // Copy
@@ -42,7 +45,20 @@ int main() {
   std::cout << "p=" << std::hex << p << std::dec << std::endl;
 
   Foo * p5 = p4.release(); // Since owndership is released, we have to manually delete this object to avoid memory leak
-  std::cout << "p5=" << std::hex << p5 << std::dec << std::endl;
+  std::cout << "p5=" << p5 <<std::endl;
+
+  // This should delete 30 and should have 40
+  p3.reset(new Foo(40));
+  std::cout << "p3=" << p3->getX() << std::endl;
+
+  // ######
+  // # Swap
+  // ######
+  p1.swap(p3);
+  std::cout << "p1=" << p1->getX() << std::endl;
+  std::cout << "p3=" << p3.get()->getX() << std::endl;
+
+  delete p5;
 
   return 0;
 }
@@ -50,11 +66,18 @@ int main() {
 /*
 Output:
 
-10 20 30
+p1=10
+p2=20
+p3=30
 p=0
-p5=0xe73f60
+p5=0x723f60
 ~Foo of x=30
+p3=40
+p1=40
+p3=10
+~Foo of x=20
 ~Foo of x=10
+~Foo of x=40
 */
 
 /*
