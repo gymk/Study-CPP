@@ -40,5 +40,16 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "alignas",
+        "cout",
+        "endl",
+        "glvalue",
+        "lvalue",
+        "prvalue",
+        "rvalue",
+        "rvalues",
+        "xvalue"
+    ]
 }
