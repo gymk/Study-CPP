@@ -8,3 +8,8 @@
     - __prvalue__: An rvalue that is not about to expire, like a literal (12, true) or the result of a non-reference return of a function.
 
 C++11 also defines two combination categories, __glvalue__ is an __lvalue__ or __xvalue__, and the classic __rvalue__, which is a __prvalue__ or an __xvalue__.
+
+## Links
+
+- <http://thbecker.net/articles/rvalue_references/section_01.html>
+- <https://stackoverflow.com/questions/13230480/what-does-auto-tell-us>
