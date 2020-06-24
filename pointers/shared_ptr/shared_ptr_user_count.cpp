@@ -45,7 +45,7 @@ int main()
 
         return id;
     };
-    std::cout << "use-count after lamba: " << p.use_count() << std::endl;
+    std::cout << "use-count after lambda: " << p.use_count() << std::endl;
 
     // Invoking lambda didn't increase use-count
     f1(0);
