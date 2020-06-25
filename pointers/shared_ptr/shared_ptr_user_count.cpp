@@ -68,7 +68,7 @@ Output:
 
 constructor 10
 initial use-count (before lambda): 1
-use-count after lamba: 2
+use-count after lambda: 2
 id: 0
 use-count: 2
 i: 9

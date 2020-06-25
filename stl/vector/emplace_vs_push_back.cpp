@@ -134,7 +134,7 @@ void test_struct_test(void)
     std::cout << std::endl;
 
     std::cout << "Before emplace_back\n";
-    test_list.emplace_back(val++);                      // most efficent, only final object required constructor invokation
+    test_list.emplace_back(val++);                      // most efficient, only final object required constructor invocation
     std::cout << "After emplace_back\n";
     std::cout << std::endl;
 

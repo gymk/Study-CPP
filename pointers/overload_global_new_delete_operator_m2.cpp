@@ -83,7 +83,7 @@ public:
 
 private:
     CMemLeakChecker(const CMemLeakChecker &) = delete;  // No Copy constructor
-    CMemLeakChecker& operator=(const CMemLeakChecker &) = delete;        // No assignment consturctor
+    CMemLeakChecker& operator=(const CMemLeakChecker &) = delete;        // No assignment constructor
 
 private:
     static int _count;

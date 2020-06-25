@@ -63,7 +63,7 @@ std::equal(v2.begin(), v2.end(), v1.begin()): 1
 /*
 Notes:
     std::vector ==
-        checks whether lengh of both vectors are having same length
+        checks whether length of both vectors are having same length
         if it has same length, will invoke std::equal to check equality
 */
 

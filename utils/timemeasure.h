@@ -9,7 +9,7 @@
 #include <chrono>
 #include <string>
 
-/* To measure the functoin time taken */
+/* To measure the function time taken */
 #define DEF_TIME_MEASURE_FUNC(__USER_STR_OR_UIN32__)    CTimeMeasure	timeMeasure(__FILE__, __PRETTY_FUNCTION__, __LINE__, __USER_STR_OR_UIN32__);
 
 /* To print function time taken along with its int value */
@@ -18,9 +18,9 @@
 #ifdef ENABLE_FUNCTION_TIME_MEASUREMENT
 #define CTIMEMEASURE_TIME_LOG(_X_)      DEF_TIME_MEASURE_VAR(_X_);
 
-#define MESAURE_FUNC_EXECUTION_TIME     CTIMEMEASURE_TIME_LOG(nullptr)
+#define MEASURE_FUNC_EXECUTION_TIME     CTIMEMEASURE_TIME_LOG(nullptr)
 #else
-#define MESAURE_FUNC_EXECUTION_TIME     /* No Operation */
+#define MEASURE_FUNC_EXECUTION_TIME     /* No Operation */
 #endif /* !ENABLE_FUNCTION_SCOPE_LOGGING */
 
 /*

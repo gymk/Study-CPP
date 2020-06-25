@@ -102,7 +102,7 @@ int main()
     std::cout << "std::less: " << std::binary_search(v.begin(), v.end(), 0, std::less<int>()) << std::endl;
     std::cout << "std::greater: " << std::binary_search(v.begin(), v.end(), 0, std::greater<int>()) << std::endl;
     std::cout << "std::less_equal: " << std::binary_search(v.begin(), v.end(), 0, std::less_equal<int>()) << std::endl;
-    std::cout << "std::greathre_equal: " << std::binary_search(v.begin(), v.end(), 0, std::greater_equal<int>()) << std::endl;
+    std::cout << "std::greater_equal: " << std::binary_search(v.begin(), v.end(), 0, std::greater_equal<int>()) << std::endl;
 }
 
 /*
@@ -124,7 +124,7 @@ Default: 1
 std::less: 1
 std::greater: 1
 std::less_equal: 0
-std::greathre_equal: 0
+std::greater_equal: 0
 
 */
 
@@ -142,7 +142,7 @@ Notes:
         inclues
         lower_bound
         upper_bound
-    Alogrithms that use equality
+    Algorithms that use equality
         search
         find_end
         find_first_of
@@ -158,16 +158,16 @@ Links:
         partial ordering
         total ordering
 
-        enum class partial_ordering { less, unorderd, greater };
+        enum class partial_ordering { less, unordered, greater };
         enum class weak_ordering { less, equivalent, greater };
-        enum clas total_ordering { less, equal, greater };
+        enum class total_ordering { less, equal, greater };
     *) TO DO http://sidd-reddy.blogspot.com/2011/01/i-was-going-over-c-stl-when-i-noticed.html
         strict
-            refers to fucntion f being of the form < as opposed to <=
+            refers to function f being of the form < as opposed to <=
         weak
             refers to an order in total. i.e., for any two elements a, b either f(a,b)
             or f(b.a) is true.
-        strickt-weak-ordering
+        strict-weak-ordering
             binary predicate
                 (!(a<b) && !(b<a))
                 a<b => !(b<a)

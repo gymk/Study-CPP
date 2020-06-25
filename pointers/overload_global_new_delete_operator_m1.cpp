@@ -6,7 +6,7 @@ class CTemp
 public:
     CTemp()
     {
-        std::cout << "Detault constructor invoked " << this << std::endl;
+        std::cout << "Default constructor invoked " << this << std::endl;
     }
     CTemp(int x)
     {
@@ -49,7 +49,7 @@ int main()
 Output:
 
 custom new invoked 0x160dc20
-Detault constructor invoked 0x160dc20
+Default constructor invoked 0x160dc20
 Destructor invoked 0x160dc20
 custom delete invoked 0x160dc20
 custom new invoked 0x160dc20
@@ -57,11 +57,11 @@ Constructor (int x) invoked: 1000x160dc20
 Destructor invoked 0x160dc20
 custom delete invoked 0x160dc20
 custom new invoked 0x160dc20
-Detault constructor invoked 0x160dc28
-Detault constructor invoked 0x160dc29
-Detault constructor invoked 0x160dc2a
-Detault constructor invoked 0x160dc2b
-Detault constructor invoked 0x160dc2c
+Default constructor invoked 0x160dc28
+Default constructor invoked 0x160dc29
+Default constructor invoked 0x160dc2a
+Default constructor invoked 0x160dc2b
+Default constructor invoked 0x160dc2c
 Destructor invoked 0x160dc2c
 Destructor invoked 0x160dc2b
 Destructor invoked 0x160dc2a
@@ -72,7 +72,7 @@ custom delete invoked 0x160dc20
 
 /*
 Notes:
-    *) we can overload new/delete with same signature for customer memory mamangement
+    *) we can overload new/delete with same signature for customer memory management
     *) eventhough it is overloaded, constructors/ destructors are getting invoked form customer new/delete
 */
 

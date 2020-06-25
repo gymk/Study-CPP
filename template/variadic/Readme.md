@@ -1,8 +1,6 @@
 # Variadic Templates
 
-
-
-```
+```c++
 template <typename... Args>
 <return_type> TemplateName<Args... args>
 {
@@ -13,20 +11,18 @@ template <typename... Args>
 
 `Args... args` is called a __function parameter pack__
 
-Ellipis `...` is an _operator_
+Ellipsis `...` is an _operator_
 
 ## template parameter pack
 
 It can have zero parameters packed in it. [Link](https://stackoverflow.com/questions/28354752/template-vs-template-without-brackets-whats-the-difference)
 It will be used to declare a specialization of the template, with different body.
 
-```
-E.g.,
+```c++
+\\E.g.,
 template <>
 void foo<int>(int& t);
 ```
-
-
 
 TO DO
 
@@ -37,7 +33,6 @@ TO DO
 ### parameter pack expansion
 
 TO DO - https://stackoverflow.com/questions/25680461/variadic-template-pack-expansion
-
 
 ### 
 
@@ -51,7 +46,7 @@ TO DO - https://stackoverflow.com/questions/25680461/variadic-template-pack-expa
 
 ## Function Template
 
-```
+```c++
 /* g++ var1.cpp -std=c++11 */
 #include <iostream>
 #include <string>

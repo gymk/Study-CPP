@@ -1,5 +1,5 @@
 /*
-g++ tempalte_and_using_keyword.cpp -std=c++11
+g++ template_and_using_keyword.cpp -std=c++11
 
 g++ -v
 Using built-in specs.

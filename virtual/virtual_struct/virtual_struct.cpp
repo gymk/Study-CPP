@@ -65,7 +65,7 @@ So in theory no difference between struct and class (I mean when you define abov
 It is best to have struct to have its default properties
     - all public
     - can have member functions
-    - no inhertiance/ virtual functions
+    - no inheritance/ virtual functions
 */
 
 /*

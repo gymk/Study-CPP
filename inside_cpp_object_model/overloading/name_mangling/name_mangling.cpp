@@ -184,7 +184,7 @@ Objdump:
 /*
 Notes:
     Compiler will generate names for methods by appending:  (for both static and dynamic polymorphism)
-        1. namepspace name
+        1. namespace name
         2. class name
         3. parameter types
     Compiler will generate names for functions by: (static polymorphism)

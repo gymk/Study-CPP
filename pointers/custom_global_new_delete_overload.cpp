@@ -13,7 +13,7 @@ class CTemp
 public:
     CTemp()
     {
-        std::cout << "Detault constructor invoked " << this << std::endl;
+        std::cout << "Default constructor invoked " << this << std::endl;
     }
     CTemp(int x)
     {
@@ -146,11 +146,11 @@ int main()
 Output:
 
 ver2-custom new size: 40 MemType: 0 0x1261c20
-Detault constructor invoked 0x1261c20
+Default constructor invoked 0x1261c20
 Destructor invoked 0x1261c20
 ver1-custom delete 0x1261c20
 ver2-custom new size: 40 MemType: 1 0x1261c20
-Detault constructor invoked 0x1261c20
+Default constructor invoked 0x1261c20
 Destructor invoked 0x1261c20
 ver1-custom delete 0x1261c20
 ver2-custom new size: 40 MemType: 0 0x1261c20
@@ -162,11 +162,11 @@ Constructor (int x) invoked: 1000x1261c20
 Destructor invoked 0x1261c20
 ver1-custom delete 0x1261c20
 ver2-custom new[] size: 208 MemType: 0 0x1262060
-Detault constructor invoked 0x1262068
-Detault constructor invoked 0x1262090
-Detault constructor invoked 0x12620b8
-Detault constructor invoked 0x12620e0
-Detault constructor invoked 0x1262108
+Default constructor invoked 0x1262068
+Default constructor invoked 0x1262090
+Default constructor invoked 0x12620b8
+Default constructor invoked 0x12620e0
+Default constructor invoked 0x1262108
 Destructor invoked 0x1262108
 Destructor invoked 0x12620e0
 Destructor invoked 0x12620b8
@@ -174,11 +174,11 @@ Destructor invoked 0x1262090
 Destructor invoked 0x1262068
 ver1-custom delete[] 0x1262060
 ver2-custom new[] size: 208 MemType: 1 0x1262060
-Detault constructor invoked 0x1262068
-Detault constructor invoked 0x1262090
-Detault constructor invoked 0x12620b8
-Detault constructor invoked 0x12620e0
-Detault constructor invoked 0x1262108
+Default constructor invoked 0x1262068
+Default constructor invoked 0x1262090
+Default constructor invoked 0x12620b8
+Default constructor invoked 0x12620e0
+Default constructor invoked 0x1262108
 Destructor invoked 0x1262108
 Destructor invoked 0x12620e0
 Destructor invoked 0x12620b8
@@ -189,7 +189,7 @@ ver1-custom delete[] 0x1262060
 
 Trying to use normal new
 ver2-custom new size: 40 0x1261c20
-Detault constructor invoked 0x1261c20
+Default constructor invoked 0x1261c20
 Destructor invoked 0x1261c20
 ver1-custom delete 0x1261c20
 
@@ -198,7 +198,7 @@ ver1-custom delete 0x1261c20
 /*
 Notes:
 
-    *) To give pass additional parameters to overload new operator, parameters need to listed inside braces, which need to be placed inbetween new and T
+    *) To give pass additional parameters to overload new operator, parameters need to listed inside braces, which need to be placed in between new and T
         new (args) T
             First parameter: size of memory will be given automatically by compiler, so only remaining args that are needed to be listed inside braces
 */

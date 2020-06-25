@@ -5,7 +5,7 @@ int main()
     int i = 10;
 
     std::cout << "i = " << i << "\n";
-    // Below lamba gives error, because by default values captured by lambda are const
+    // Below lambda gives error, because by default values captured by lambda are const
     // so those are immutable, meaning we cant change its value
     //auto f1 = [](i) { i = 20 };
     //std::cout << "i = " << i << "\n";
@@ -23,6 +23,6 @@ int main()
 Output:
 
 i = 10
-i = 10  - Since f2 captured argument as 'Pass by Value', i = 20 didnt get reflected
+i = 10  - Since f2 captured argument as 'Pass by Value', i = 20 didn't get reflected
 i = 30  - Since f3 captured argument as 'Pass by reference', i = 30 got reflected
 */

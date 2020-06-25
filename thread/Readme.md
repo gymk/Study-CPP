@@ -4,88 +4,89 @@
 
 [Running a Function as thread](#Running a Function as thread)
 
- ## Creating and running a thread
+## Creating and running a thread
 
->> ### Running a Function as thread
-Funtions can be executed as a thread
+### Running a Function as thread
 
-```
+Functions can be executed as a thread
+
+```c++
 void thread_function(void)
 {
-	for(int i = 0; i < 1000; i++)
-		std::cout << "thead function executing..." << std::endl;
+  for(int i = 0; i < 1000; i++)
+    std::cout << "thead function executing..." << std::endl;
 
-	std::cout << "Exit of thread function" << std::endl;
+  std::cout << "Exit of thread function" << std::endl;
 }
 
 std::thread th(thread_function)
 ```
 
->> ### Running a Functor as thread
-Functors can be executed as a seperate thread.
+### Running a Functor as thread
+
+Functor can be executed as a separate thread.
 
 Due to [Most vexing parse](https://en.wikipedia.org/wiki/Most_vexing_parse), functor need to wrapped with brackets.
 
-
-```
+```c++
 class CFunctor
 {
 public:
-	void operator()()
-	{
-		for(int i = 0; i < 1000; i++)
-			std::cout << "Functor executing...\n";
-	}
+  void operator()()
+  {
+    for(int i = 0; i < 1000; i++)
+      std::cout << "Functor executing...\n";
+  }
 };
 
 std::thread th((CFunctor()))
 ```
 
-*Note here that functor is wrapper around paranthesis. Otherwise it will assume th as a function wil arugment having a functor. To avoid mis-interpretation by compiler, functor is wrapped around paranthesis*
+- *Note here that functor is wrapper around paranthesis. Otherwise it will assume th as a function wil arugment having a functor. To avoid mis-interpretation by compiler, functor is wrapped around paranthesis*
 
->> ### Running a Lamda as thread
-Lamba functions can be executed as a seperate thread
+### Running a Lambda as thread
 
-```
+Lambda functions can be executed as a separate thread
+
+```c++
 std::thread th([]{
-		for(int i = 0; i < 1000; i++)
-			std::cout << std::this_thread::get_id() << " Lamda function executing\n";
-		});
+  for(int i = 0; i < 1000; i++)
+    std::cout << std::this_thread::get_id() << " Lambda function executing\n";
+  });
 ```
 
-> ## Thread join(), detach()
+## Thread join(), detach()
 
 Once thread is created, it need to be joined() or detached(), otherwise at the end of thread execution
 a) if it is joinable, it will terminate the program, resulting crash
 b) if it is detached, it will release the resources acquired by thread
 
-
 To join a thread
-```
+
+```c++
 th.join()
 ```
 
 To detach a thread
-```
+
+```c++
 th.detach();
 ```
 
-*Once detached, you cannot join again. ALso once joined, don't try to join again. Both will result in undefined behaviour*
+- Once detached, you cannot join again. ALso once joined, don't try to join again. Both will result in undefined behaviour*
 
+## Pending Notes
 
-
-# Pending Notes
-
-```
+```text
 C++ std::thread
 
 std::thread vs pthread
 	*) pthread_cancel not available in std::thread
 	*) pthread provides control over the size of the stack created, but c++ std::thread don't. Linux provides setrlimit(), but it affects all the threads running in the system.
-	*) withouth pthread_join(), it will create only resource leak, but in C++, without join(), it will terminate the program
+	*) without pthread_join(), it will create only resource leak, but in C++, without join(), it will terminate the program
 	*) Object lifetime and exception management is easy using RAII over mutex, condition variables and locks.
 	*) RAII is the center of design of the C++ thread library
-	*) pthread requires predefined thread function signature for its running. std:;thread we can use any callable object such as lambda functions or functor can be used to as a seperate thread.
+	*) pthread requires predefined thread function signature for its running. std:;thread we can use any callable object such as lambda functions or functor can be used to as a separate thread.
 	*) std::thread cannot return a value like pthread_exit(). You need to use std::future to get return from std::thread
 
 std::thread
@@ -143,12 +144,10 @@ multithread programming in C++
 	Function objects
 		e.g., std::function and std::bind
 
-		
-
-		
 Book
-	C++ concurrency in action
-	
+  C++ concurrency in action
+
 References
-	https://indico.cern.ch/event/199138/contributions/378651/attachments/295442/412882/c11-threads-paper.pdf
+ https://indico.cern.ch/event/199138/contributions/378651/attachments/295442/412882/c11-threads-paper.pdf
+
 ```

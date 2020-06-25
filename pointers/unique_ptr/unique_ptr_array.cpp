@@ -17,7 +17,7 @@ gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10)
 
 const int arr_size = 5;
 
-// Overloading new and delete to check std::unqiue_ptr alloc/ dealloc sequences
+// Overloading new and delete to check std::unique_ptr alloc/ dealloc sequences
 void* operator new(size_t t)
 {
     void * p = malloc(t);
@@ -112,7 +112,7 @@ void UniquePtr_CheckOwnershipRelease(void)
 
     std::cout << "unique_ptr object address before release: " << pA.get() << std::endl;  // pA will have null
     int * pI = pA.release();
-    // note below that get() is used, if deferenced it will crash the program
+    // note below that get() is used, if dereferenced it will crash the program
     std::cout << "unique_ptr object address after release: " << pA.get() << std::endl;  // pA will have null
     std::cout << "Value of pI: " << pI << std::endl;  // should print the address given by std::unique_ptr
     std::cout << "Value @ *pI: " << *pI << std::endl;  // 30 should be printed
@@ -128,7 +128,7 @@ void UniquePtr_CheckReset(void)
 
     std::cout << "unique_ptr object address before release: " << pA.get() << std::endl;  // pA will have null
     pA.reset();
-    // note below that get() is used, if deferenced it will crash the program
+    // note below that get() is used, if dereferenced it will crash the program
     std::cout << "unique_ptr object address after release: " << pA.get() << std::endl;  // pA will have null
     std::cout << "Exit " << __FUNCTION__ << std::endl;
 

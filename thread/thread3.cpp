@@ -6,11 +6,11 @@ void lambda_as_thread(void)
 {
 	std::thread th([]{
 			for(int i = 0; i < 1000; i++)
-				std::cout << std::this_thread::get_id() << " Lamda function executing\n";
+				std::cout << std::this_thread::get_id() << " Lambda function executing\n";
 			});
 
 	for(int i = 0; i < 1000; i++)
-		std::cout << std::this_thread::get_id() << " Main funciton executing\n";
+		std::cout << std::this_thread::get_id() << " Main function executing\n";
 
 	th.join();
 }

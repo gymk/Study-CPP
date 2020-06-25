@@ -10,7 +10,7 @@ similarly check for iterators to other primitive types
 #include <iostream>
 #include <iterator>
 
-// Defining a tempalte to have a reverse range looop
+// Defining a template to have a reverse range loop
 template <typename T>
 struct reverse_range
 {

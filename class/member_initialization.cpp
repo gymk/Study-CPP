@@ -28,7 +28,7 @@ int main()
 {
     std::cout << "Member Initialization !!!" << std::endl;
     int x1 = 10; // C-like initialization
-    int x2 (10); // Constuctor initialization
+    int x2 (10); // Constructor initialization
     int x3 {10}; // Uniform initialization
 
     int ar[] = {1, 2, 3, 4};
@@ -68,7 +68,7 @@ Notes:
         eg: 1
             std::vector<v> (100);   // Will create a vector having 100 elements
             std::vector<v> {100};   // Will create a vector having single element of value 100
-            Hence where possible brac-initialization is preferred
+            Hence where possible brace-initialization is preferred
         eg: 2
             int ar[] = { 1, 2, 3, 4 };  // Creates a array having 1, 2, 3, 4 as values
             std::vector<v> = { 1, 2, 3, 4}; // Creates a vector having 4 elements having values 1, 2, 3, 4 respectively. Note that '=' is optional

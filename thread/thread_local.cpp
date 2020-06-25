@@ -47,7 +47,7 @@ This code is for study/checking thread local behaviour
 so I am using it, otherwise since we have unique memory,
 it is best to live with that without thread local.
 */
-// Since it is a unique pointer, we need to get arugment
+// Since it is a unique pointer, we need to get argument
 // as pointer to const with reference
 // TO UNDERSTAND: Why reference? why const? what is behind this logic?
 void Thread(unique_ptr<TH_PARAM> const & pParam)

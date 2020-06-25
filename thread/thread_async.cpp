@@ -55,7 +55,7 @@ void check_std_thread_no_ret_val(void)
 // I see that each thread return value obtained in 1 second interval
 // meaning thread is launched only when get() invoked
 // since I am getting each thread status in loop, looks like it is giving results like this
-// Because std::launch type is not specified, in this case, std::lauch::deferred is assumed
+// Because std::launch type is not specified, in this case, std::launch::deferred is assumed
 // by g++ compiler
 void check_std_thread_ret_val_1(void)
 {

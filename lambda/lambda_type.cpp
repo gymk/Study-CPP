@@ -21,7 +21,7 @@ Output:
 If signautre matches, lambda can be assigned to a function pointer and can be invoked.
 Be cautiously on parameters that are captured. If referenced, scoping should be taken care.
 It is best practice to use auto to let compiler deduce the type (like above f1, f2)
-Because lamda actual type is defined based on bespoke lamda's actual implementation
+Because lambda actual type is defined based on bespoke lamda's actual implementation
 
 From f1
 From f2: 10

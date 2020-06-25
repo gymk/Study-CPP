@@ -1,9 +1,9 @@
 #include <iostream>
 #include <functional>
 
-void gloabal_func(void)
+void global_func(void)
 {
-    std::cout << "I am from global funciton...\n";
+    std::cout << "I am from global function...\n";
 }
 
 struct Functor
@@ -19,14 +19,14 @@ int main()
     std::function<void()> f;
 
     // Invoking a global functor via std::function
-    f = gloabal_func;
+    f = global_func;
     f();
 
     // Invoking functor via same std::function
     f = Functor();
     f();
 
-    // Involing a lambda from std::functiioin
+    // Involving a lambda from std::function
     f = [](){ std::cout << "I am from lambda...\n";};
     f();
 }
@@ -34,7 +34,7 @@ int main()
 /*
 Output:
 
-I am from global funciton...
+I am from global function...
 I am from functor...
 I am from lambda...
 
@@ -42,7 +42,7 @@ I am from lambda...
 
 /*
 Notes:
-    *) as long as function signature mathches, std::function can take function/ functor/ lambda as values
+    *) as long as function signature matches, std::function can take function/ functor/ lambda as values
 */
 
 /*

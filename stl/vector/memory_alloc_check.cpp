@@ -1,5 +1,5 @@
 /*
-g++ memmory_alloc_check.cpp -std=c++11
+g++ memory_alloc_check.cpp -std=c++11
 
 g++ -v
 
@@ -23,7 +23,7 @@ gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10)
 
 
 int main()
-{ LOG_CALL; MESAURE_FUNC_EXECUTION_TIME;
+{ LOG_CALL; MEASURE_FUNC_EXECUTION_TIME;
     std::vector<int> v;
 
     for(int i = 0; i < 100000; i++)
@@ -36,7 +36,7 @@ int main()
 Output:
 
 A	Alloc(24,0x88ec20)
-[memmory_alloc_check.cpp:int main():Enter]
+[memory_alloc_check.cpp:int main():Enter]
 	Alloc(24,0x88f050)
 	Alloc(4,0x88f070)
 	Alloc(8,0x88f090)
@@ -74,9 +74,9 @@ A	Alloc(24,0x88ec20)
 	Alloc(524288,0x7f074d6d6010)
 	Dealloc(0x7f074d757010)
 	Dealloc(0x7f074d6d6010)
-(memmory_alloc_check.cpp:int main() took 5473 microseconds)
+(memory_alloc_check.cpp:int main() took 5473 microseconds)
 	Dealloc(0x88f050)
-[memmory_alloc_check.cpp:int main():Exit]
+[memory_alloc_check.cpp:int main():Exit]
 	Dealloc(0x88ec20)
 
 */

@@ -40,7 +40,7 @@ size_of(y): 10
 /*
 Notes:
     *) using template argument deduction, compiler will deduce the value 'n'
-    *) since constexpr is used, during compile time value will be calculated and substitued in main() for variable creaion. Hence we are able to use size_of(y) in std::cout.
+    *) since constexpr is used, during compile time value will be calculated and substituted in main() for variable creation. Hence we are able to use size_of(y) in std::cout.
 */
 
 /*

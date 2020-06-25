@@ -21,7 +21,7 @@ gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10)
 #include "../../utils/custom_alloc.h"
 
 void push_back_check(void)
-{ LOG_CALL; MESAURE_FUNC_EXECUTION_TIME;
+{ LOG_CALL; MEASURE_FUNC_EXECUTION_TIME;
     std::vector<int> v;
 
     v.resize(10);
@@ -38,7 +38,7 @@ void push_back_check(void)
 }
 
 void emplace_back_check(void)
-{ LOG_CALL; MESAURE_FUNC_EXECUTION_TIME;
+{ LOG_CALL; MEASURE_FUNC_EXECUTION_TIME;
     std::vector<int> v;
 
     v.resize(10);
@@ -55,7 +55,7 @@ void emplace_back_check(void)
 }
 
 void emplace_check(void)
-{ LOG_CALL; MESAURE_FUNC_EXECUTION_TIME;
+{ LOG_CALL; MEASURE_FUNC_EXECUTION_TIME;
     std::vector<int> v;
 
     v.resize(10);
@@ -72,7 +72,7 @@ void emplace_check(void)
 }
 
 int main()
-{ LOG_CALL; MESAURE_FUNC_EXECUTION_TIME;
+{ LOG_CALL; MEASURE_FUNC_EXECUTION_TIME;
     push_back_check();
     emplace_back_check();
     emplace_check();
