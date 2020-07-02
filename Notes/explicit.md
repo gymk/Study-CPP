@@ -1,4 +1,4 @@
-# explicit keyword
+# `explicit` keyword
 
 ## explicit constructors
 
