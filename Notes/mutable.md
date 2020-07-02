@@ -19,6 +19,7 @@ public:
 - From C++11, `mutable` means **_`thread-safe`_**[1].
   - It means it is bitwise const
   - Or internally synchronized
+  - i.e, either ensure bitwise const or if logical const is required, ensure internal thread safety (Refer Notes --> thread safe copy constructor)
 
 ## Links
 

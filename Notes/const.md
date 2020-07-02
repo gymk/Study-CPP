@@ -6,6 +6,7 @@
 - From C++11 `const` means **_`thread-safe`_**[1]
   - It means it is bitwise const
   - Or internally synchronized
+  - i.e, either ensure bitwise const or if logical const is required, ensure internal thread safety (Refer Notes --> thread safe copy constructor)
 
 This is to enable e.g., say a C++ standard library function _shall not directly or indirectly modify_ objects accessible by threads other than the current thread unless the objects are accessed directly or indirectly via the function's non-`const` arguments, including _this_.
 
