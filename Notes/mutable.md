@@ -1,4 +1,4 @@
-# mutable keyword
+# `mutable` keyword
 
 - In C++98, `mutable` means _`"not observably non-const"`_
 
