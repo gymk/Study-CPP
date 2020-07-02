@@ -1,4 +1,4 @@
-# const keyword
+# `const` keyword
 
 - In C++ terms, `const` means read-only, that is immutable.
 
