@@ -64,12 +64,15 @@
         "xutility": "cpp"
     },
     "cSpell.words": [
+        "Creational",
         "Jupyter",
         "Qian",
         "RAII",
+        "Vtable",
         "Zubkov",
         "alignas",
         "bigarray",
+        "constexpr",
         "cout",
         "datatypes",
         "deque",
@@ -82,9 +85,12 @@
         "iostream",
         "lpthread",
         "lvalue",
+        "memberwise",
         "multimap",
         "multiset",
+        "mutex",
         "myarray",
+        "noexcept",
         "nullptr",
         "nvptx",
         "printd",
@@ -94,7 +100,9 @@
         "pthread",
         "rvalue",
         "rvalues",
+        "struct",
         "vptr",
+        "wchar",
         "xvalue"
     ]
 }
