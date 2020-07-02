@@ -51,5 +51,5 @@ CPrintClass: b1234
 
 /*
 Notes:
-	*) const_cast removes the const qualifies from the objects for modification
+	*) const_cast removes the const qualifier from the objects for modification
 */
