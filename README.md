@@ -28,3 +28,13 @@ My C++ Study related notes
   - Designated initializers <https://en.cppreference.com/w/cpp/language/aggregate_initialization>
 
   - Brace Initialization <https://docs.microsoft.com/en-us/cpp/cpp/initializing-classes-and-structs-without-constructors-cpp?view=vs-2019>
+
+- Initialization of Non-Local Variables
+  - Static Initialization
+  - Dynamic Initialization
+  - Early Dynamic Initialization
+  - Deferred Dynamic Initialization
+
+- `std::atomic` and `std::atomic_flag`
+  - <https://riptutorial.com/cplusplus/topic/3804/atomic-types>
+- `std::current_exception`
