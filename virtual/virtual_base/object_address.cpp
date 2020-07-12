@@ -11,7 +11,7 @@ protected:
     int a;
 };
 
-class B : virtual A
+class B : public virtual A
 {
 public:
     virtual void PrintMsg(void) const
@@ -27,13 +27,13 @@ int main()
 {
     class B * b = new B;
 
-    std::cout << reinterpret_cast<void*>(b) << std::endl;
+    std::cout << "reinterpret_cast<void*>(b): " << reinterpret_cast<void*>(b) << std::endl;
     b->PrintMsg();
 
     //class A * a = dynamic_cast<A*>(b);
     class A * a = static_cast<A*>(b);
 
-    std::cout << reinterpret_cast<void*>(a) << std::endl;
+    std::cout << "reinterpret_cast<void*>(a): " << reinterpret_cast<void*>(a) << std::endl;
     a->PrintMsg();
 }
 #else
@@ -51,3 +51,12 @@ int main()
     b->PrintMsg();
 }
 #endif
+
+/*
+Output:
+
+reinterpret_cast<void*>(b): 0xdf2530
+0xdf2530 virtual void B::PrintMsg() const
+reinterpret_cast<void*>(a): 0xdf2540
+0xdf2530 virtual void B::PrintMsg() const
+*/
