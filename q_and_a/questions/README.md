@@ -36,6 +36,10 @@ void get_q_r(int x, int y, int *q_v, int *r_v) {
 }
 ```
 
+## Q3: 'Validate Parenthesis'
+
+- Write a program to validate the parenthesis expression
+
 ## Links
 
 - [1]<http://thbecker.net/articles/auto_and_decltype/section_03.html>
