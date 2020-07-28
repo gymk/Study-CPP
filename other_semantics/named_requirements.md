@@ -46,6 +46,10 @@ Given
 ## TO DO
 
 - https://en.cppreference.com/w/cpp/named_req
+- [`std::advance`](https://en.cppreference.com/w/cpp/iterator/advance)
+  - `LegacyIterator`
+    - `LegacyInputIterator`
+    - `LegacyRandomAccessIterator`
 
 ## Links
 

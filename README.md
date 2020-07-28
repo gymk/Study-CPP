@@ -2,6 +2,17 @@
 
 My C++ Study related notes
 
+- [Access Specifier](access_specifiers/README.md)
+- [Memory](pointers/Readme.md)
+- [C++ std::thread](thread/Readme.md)
+- [STL](stl/README.md)
+- [C++ Standard Attributes](attributes/README.md)
+- [Move Semantics](move_semantics/README.md)
+- [lambda](lambda/README.md)
+- [C++ Standard Attributes](attributes/README.md)
+
+- [Design Pattern](design-patterns/README.md)
+
 ## References
 
 [1] <https://lhcb.github.io/developkit-lessons/first-development-steps/05a-cpp11.html>

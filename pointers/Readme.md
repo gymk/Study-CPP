@@ -82,6 +82,19 @@ Performs following actions in behind
 
 - A special type of shared_ptr which doesn't count the reference
 
+### Guidelines
+
+- Memory Management
+  - Avoid `std::xx_ptr(type) obj(new type)`
+    - Avoid these type of smart pointer creation
+    - It will create `obj` of type `type`, and then it will create `std::shared_ptr` object.
+      - Unnecessary of creating two objects
+- Use `make_X`
+  - Use `std::shared_ptr` only if necessary
+    - Only if you are planning to share the pointer
+    - Otherwise `std::unique_ptr` is preferred
+- Use `make_x` to create smart pointers
+
 ## Links
 
 - <http://www.drdobbs.com/cpp/calling-constructors-with-placement-new/232901023>
@@ -89,6 +102,8 @@ Performs following actions in behind
 - <http://jrruethe.github.io/blog/2015/08/23/placement-new/>
 - <http://blog.aaronballman.com/2011/08/the-placement-new-operator/>
 - <https://www.modernescpp.com/index.php/c-core-guidelines-rules-to-smart-pointers>
+- <https://www.internalpointers.com/post/quick-primer-type-traits-modern-cpp#:~:text=What%20is%20a%20type%20trait,or%20the%20transformation%20it%20performs.>
+  - A quick primer on type traits in modern C++
 
 ## Video Links
 

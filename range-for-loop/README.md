@@ -58,6 +58,33 @@ for(auto&& y : x)
     y = !y;
 ```
 
+## Why Range Loop
+
+- Containers provide difference set of operations for element access
+  - `std::vector`
+    - `at()`, `operator[]`
+  - `std::list`
+    - `fron()`, `back()`
+
+We can't traverse in a container in a traditional way.
+
+This won't work for all containers:
+```cpp
+std::vector<int> vec{1, 2, 3, 4, 5};
+for(int ix = 0; ix < vec.size(); ix++>) {
+    std::cout << vec[ix]; // access using operator[] which is not available with all containers
+}
+```
+
+Instead:
+```cpp
+// We can loop thru both std::list and std::vector
+std::list<double> lst{1.1, 2.2, 3.3, 4.4, 5.5};
+for(auto & elem : lst) {
+    std::cout << elem;
+}
+```
+
 ## Links
 
 - <https://en.cppreference.com/w/cpp/language/range-for>
@@ -66,3 +93,5 @@ for(auto&& y : x)
 - Universal Reference
   - <https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers>
   - <https://stackoverflow.com/questions/13230480/what-does-auto-tell-us>
+- <https://learning.oreilly.com/library/view/expert-c/9781838552657/fd5aaf11-92eb-42c4-8dff-306bf47086c2.xhtml>
+  - Why range loop is useful for iterating over containers

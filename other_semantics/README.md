@@ -34,6 +34,7 @@
   - <https://riptutorial.com/cplusplus/example/18756/--deprecated---and---deprecated--reason---->
 - `[[nodiscard]]` >= C++17
   - <https://riptutorial.com/cplusplus/example/19006/--nodiscard-->
+  - <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0068r0.pdf>
 - `[[fallthrough]]` >= C++17
   - <https://riptutorial.com/cplusplus/example/18747/--fallthrough-->
 - `[[maybe_unused]]`
