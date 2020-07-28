@@ -1,5 +1,18 @@
 # Standard Template Library
 
+![STL](images/stl.png)
+
+STL is based on three concepts
+
+- Containers
+  - To to store the data
+- Algorithms
+  - To manipulate the data
+  - Algorithms are functions that work with data. Most of the time they work with collections of data.
+- Iterators
+  - To access the data
+  - Each container has its own implementation. Iterators provides a common way to access the containers for use by the algorithms.
+
 ## C++ Objects, Containers and Maps
 
 - _Objects_: a way to make parts of the program more self-contained, tying together data and behaviour. Objects can be related to other objects.

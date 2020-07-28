@@ -1,5 +1,8 @@
 # STL Container Adapters
 
+In STL, `std::stack` and `std::queue` adapt containers by providing a special interface to access them.
+I.e., these are not data structures, but data structure adapters.
+
 - `std::stack`
 - `std::queue`
 - `std::priority_queue`
@@ -10,12 +13,16 @@ The underlying sequence container can be changed, provided, it supports `push_ba
 
 ## `std::stack`
 
+LIFO - Last In First Out
+
 ```cpp
 void push(const T& value);
 void push(T && value);
 ```
 
 ## `std::queue`
+
+FIFO - First In First Out
 
 - TO DO
 
