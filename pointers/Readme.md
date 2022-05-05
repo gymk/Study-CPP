@@ -104,6 +104,8 @@ Performs following actions in behind
 - <https://www.modernescpp.com/index.php/c-core-guidelines-rules-to-smart-pointers>
 - <https://www.internalpointers.com/post/quick-primer-type-traits-modern-cpp#:~:text=What%20is%20a%20type%20trait,or%20the%20transformation%20it%20performs.>
   - A quick primer on type traits in modern C++
+- Example sample custom std::allocator (Stack/Heap)
+  - <https://blog.demofox.org/2015/02/25/avoiding-the-performance-hazzards-of-stdfunction/>
 
 ## Video Links
 
