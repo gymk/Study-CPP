@@ -10,6 +10,8 @@
   - [Q7: Can i use `realloc()` in C++](#q7-can-i-use-realloc-in-c)
   - [Q8: Explain below code](#q8-explain-below-code)
   - [Q9: Write code to print matrix in sive wave order](#q9-write-code-to-print-matrix-in-sive-wave-order)
+  - [Q10: How we can execute our code before `main()`?](#q10-how-we-can-execute-our-code-before-main)
+  - [Q11: How we can run code after `main()`?](#q11-how-we-can-run-code-after-main)
   - [Links](#links)
   - [Misc](#misc)
 
@@ -115,11 +117,20 @@ void get_q_r(int x, int y, int *q_v, int *r_v) {
 
 - [Answer](../answers/README.md#q9-write-code-to-print-matrix-in-sive-wave-order)
 
+## Q10: How we can execute our code before `main()`?
+
+- From [3]
+
+## Q11: How we can run code after `main()`?
+
+- From [3]
+
 ## Links
 
 - [1]<http://thbecker.net/articles/auto_and_decltype/section_03.html>
 - [2]<http://www.cs.cornell.edu/gries/July2016/The-Science-Of-Programming-Gries-038790641X.pdf>
   - The Science of Programming (Monographs in Computer Science) by David Gries
+- [3] <https://akrzemi1.wordpress.com/2017/06/28/compile-time-string-concatenation/>
 
 ## Misc
 

@@ -77,6 +77,8 @@ My C++ Study related notes
 
 ## Other Links
 
+- Quant
+  - <https://www.quantstart.com/articles/topic/c/>
 - Pointer Aliasing
   - <https://cvw.cac.cornell.edu/vector/coding_aliasing>
 - <https://pabloariasal.github.io/tag/cpp/>
