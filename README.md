@@ -12,6 +12,7 @@ My C++ Study related notes
 - [lambda](lambda/README.md)
 - [C++ Standard Attributes](attributes/README.md)
 - C++ GSL
+- [DPC++](DPC++/README.md)
 
 - [Design Pattern](design-patterns/README.md)
 
@@ -74,6 +75,9 @@ My C++ Study related notes
   - What is polymorphic direct functoids?
   - What is Indirect functoids?
   - What is Direct functoids?
+- C++ Idioms
+  - <https://en.wikibooks.org/wiki/C%2B%2B_Programming/Idioms>
+  - <https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms>
 
 ## Other Links
 
@@ -116,3 +120,7 @@ My C++ Study related notes
       - ...
   - B. McNamara, Y. Smaragdakis, Functional programming with the FC++ library, Journal of Functional Programming 14 (4) (2004) 429–472.
     - <https://www.cambridge.org/core/journals/journal-of-functional-programming/article/functional-programming-with-the-fc-library/1EC78833E953D6798C39C2E4B15EE4B4>
+- Sample C++ Source code
+  - <https://stackoverflow.com/posts/33563479/revisions>
+    - LevelDB
+      - <https://github.com/google/leveldb>
