@@ -16,6 +16,8 @@ My C++ Study related notes
 
 - [Design Pattern](design-patterns/README.md)
 
+- [Safety Critical](Safety_Critical/README.md)
+
 ## References
 
 - [1] <https://lhcb.github.io/developkit-lessons/first-development-steps/05a-cpp11.html>
@@ -23,6 +25,35 @@ My C++ Study related notes
 - [3] [GSL Guideline Support Library](https://github.com/Microsoft/GSL)
   - GSL implementation from Microsoft
 - [4] [C++ FAQ](https://www.cs.technion.ac.il/users/yechiel/c++-faq/)
+- [5] [Writing Safety Critical C++ Software for High Performance hardware](http://purecpp.org/static/bbd0fe3218f940b3a088450be28e8ed8.pdf)
+
+## C++ Versions
+
+- From [1]
+  - C++98/0
+    - `Inheritance`
+    - `Exception`
+    - `Templates`
+    - `STL`
+  - C++11
+    - `Auto`
+    - `Concurrency`
+    - `Move`
+    - `Futures`
+  - C++14
+    - `Generalized Lambdas`
+    - `Reader-Writer Locks`
+    - `constexpr`
+    - `Return type deductions extended to al functions`
+  - C++17
+    - `Template deduction`
+    - `Compile time if`
+    - `Parallel STL`
+  - C++20
+    - `Modules`
+    - `Concept`
+    - `Co-routine`
+    - `Ranges`
 
 ## Yet to Study
 
