@@ -28,6 +28,16 @@
   - Online Open Access library of books
 - <https://princetonuniversity.github.io/PUbootcamp/sessions/parallel-programming/Intro_PP_bootcamp_2018.pdf>
   - OpenMP vs MPI
+- <https://www.youtube.com/watch?v=a4SyD2KuPuQ>
+  - The Intel OneAPI and DPC++ - An introductory discussion!
+- <https://www.youtube.com/watch?v=9r5LY7boBGs>
+  - This and its playlist
+- <https://www.youtube.com/watch?v=miqZS6aS9K0>
+  - CppCon 2018: Gordon Brown “A Modern C++ Programming Model for GPUs using Khronos SYCL”
+    - **Recommended** to learn SYCL, GPU arch, example code
+- <https://www.youtube.com/watch?v=Vck6kzWjY88>
+  - CppCon 2016: Bryce Adelstein Lelbach “The C++17 Parallel Algorithms Library and Beyond"
+    - **Recommended** to know C++17 new parallel algorithms
 
 ## Courses
 
