@@ -1,15 +1,10 @@
 # Data Parallel C++
 
 - [Data Parallel C++](#data-parallel-c)
-  - [Books](#books)
   - [Study Links](#study-links)
-  - [Courses](#courses)
-
-## Books
-
-- Data Parallel C++
-- Topics in Parallel and Distributed Computing
-- Introduction to Parallel Algorithms
+    - [Books](#books)
+    - [Onine Magaize](#onine-magaize)
+    - [Courses](#courses)
 
 ## Study Links
 
@@ -39,7 +34,17 @@
   - CppCon 2016: Bryce Adelstein Lelbach “The C++17 Parallel Algorithms Library and Beyond"
     - **Recommended** to know C++17 new parallel algorithms
 
-## Courses
+### Books
+
+- Data Parallel C++
+- Topics in Parallel and Distributed Computing
+- Introduction to Parallel Algorithms
+
+### Onine Magaize
+
+- <https://insidehpc.com/>
+
+### Courses
 
 - NPTEL Courses
   - Introduction to Parallel Computing using OpenMP
