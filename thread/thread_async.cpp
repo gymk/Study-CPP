@@ -113,3 +113,41 @@ int main()
     // rvalue as arg
 }
 
+/*
+Output:
+
+main 139656439228224
+check_std_thread_no_ret_val
+Thread: 139656439224064 exiting
+Thread: 139656430831360 exiting
+Thread: 139656422438656 exiting
+Thread: 139656405653248 exiting
+Thread: Thread: 139656397260544 exiting
+Thread: Thread: 139656363689728 exiting
+139656388867840 exiting
+139656372082432 exiting
+Thread: 139656380475136 exiting
+Thread: 139656414045952 exiting
+check_std_thread_ret_val_1
+Fuction returned: 1
+Fuction returned: 2
+Fuction returned: 3
+Fuction returned: 4
+Fuction returned: 5
+Fuction returned: 6
+Fuction returned: 7
+Fuction returned: 8
+Fuction returned: 9
+Fuction returned: 10
+check_std_thread_ret_val_2
+Fuction returned: 1
+Fuction returned: 2
+Fuction returned: 3
+Fuction returned: 4
+Fuction returned: 5
+Fuction returned: 6
+Fuction returned: 7
+Fuction returned: 8
+Fuction returned: 9
+Fuction returned: 10
+*/

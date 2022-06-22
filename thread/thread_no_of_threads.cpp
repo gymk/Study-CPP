@@ -5,3 +5,9 @@ int main()
 {
 	std::cout << std::thread::hardware_concurrency() << std::endl;
 }
+
+/*
+Output:
+
+12
+*/

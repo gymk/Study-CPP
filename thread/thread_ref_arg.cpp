@@ -21,3 +21,11 @@ int main()
 	th.join();
 	std::cout << "x: " << x << std::endl;
 }
+
+/*
+Output:
+
+x: 10
+x: 11 y: 11
+x: 10
+*/

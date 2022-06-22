@@ -37,7 +37,7 @@ void PrintTLSInfo(const char * pDebugStr)
 {
 	// How to get thread id??
 	//cout << pDebugStr << this_thread::get_id() << ' ' << TLS_1 << ' ' << TLS_2 << endl;
-	cout << pDebugStr << TLS_id << ' ' << TLS_1 << ' ' << TLS_2 << endl;
+	cout << "Thread: " << std::this_thread::get_id() << pDebugStr << TLS_id << ' ' << TLS_1 << ' ' << TLS_2 << endl;
 }
 
 /*
@@ -52,13 +52,13 @@ it is best to live with that without thread local.
 // TO UNDERSTAND: Why reference? why const? what is behind this logic?
 void Thread(unique_ptr<TH_PARAM> const & pParam)
 {
-	PrintTLSInfo("Uninitialized : ");
+	PrintTLSInfo(" Uninitialized : ");
 
 	TLS_id = pParam->id;
 	TLS_1 = pParam->a;
 	TLS_2 = pParam->b;
 	
-	PrintTLSInfo("Initialized : ");
+	PrintTLSInfo(" Initialized : ");
 
 	for(int i = 0; i < 10000; i++)
 	{
@@ -66,7 +66,7 @@ void Thread(unique_ptr<TH_PARAM> const & pParam)
 		IncTLS2();
 	}
 	
-	PrintTLSInfo("Incremeneted : ");
+	PrintTLSInfo(" Incremeneted : ");
 }
 
 int main()
@@ -104,3 +104,38 @@ int main()
 		astThreads[i].join();
 	}
 }
+
+/*
+Output:
+
+Thread: 140706285082368 Uninitialized : 0 0 0
+Thread: 140706285082368 Initialized : 1 103 198
+Thread: 140706268296960 Uninitialized : 0 0 0
+Thread: 140706268296960 Initialized : 3 81 255Thread: 
+140706259904256 Uninitialized : 0 0 0
+Thread: 140706268296960 Incremeneted : 3 10081 10255
+Thread: 140706251511552 Uninitialized : 0 0 0
+Thread: 140706251511552 Initialized : 5 41 205
+Thread: Thread: 140706234726144140706259904256 Initialized : 4 74 236
+Thread:  Uninitialized : 0 0 0
+Thread: 140706234726144 Initialized : 7 242 251
+Thread: 140706234726144Thread: 140706276689664 Uninitialized : 0 0 0
+Thread: 140706226333440 Uninitialized : 0 0 0
+140706285082368Thread: Thread: 140706226333440 Initialized : 8 227 70
+Thread:  Incremeneted : Thread: 140706226333440 Incremeneted : 8 10227 10070
+ Incremeneted : 140706259904256 Incremeneted : 74 10074  140706243118848Thread: 140706276689664 Initialized : 2 105 115
+Thread: 140706148513536 Uninitialized : 0 0 0
+Thread: 140706148513536 Initialized : 9 124 194
+Thread: 140706148513536 Incremeneted : 9 10124 10194
+Thread: 140706140120832 Uninitialized : 0 0 0
+Thread: 140706140120832 Initialized : 10 84 248
+Thread: 140706276689664 Incremeneted : 2 10105 10115
+10242 10251
+Thread: 140706251511552 Incremeneted : 5 10041 10205
+10236
+Thread: 140706140120832 Incremeneted : 10 10084 10248
+1 10103 10198
+ Uninitialized : 0 0 0
+Thread: 140706243118848 Initialized : 6 186 171
+Thread: 140706243118848 Incremeneted : 6 10186 10171
+*/
